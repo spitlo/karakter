@@ -1,0 +1,97 @@
+#!/usr/bin/env bash
+set -e
+
+# Create alternatives for most A-Z and a-z
+A="ĄΑΔΛЉАд▲"
+B="8"
+C="©"
+D="ĎĐ"
+E="єξΣΞ3€"
+F=""
+G=""
+H="њнЂ"
+I="Ϊ1"
+J=""
+K="ќк"
+L=""
+M="м"
+N="ѝйи"
+O="фθ0"
+P=""
+Q=""
+R="яŔ®"
+S="Ș5"
+T="┬†ṪтȚŤ"
+U=""
+V=""
+W="Ŵ"
+X="χ"
+Y="Ų¥"
+Z=""
+
+a="ąάαаą@ª"
+b="ъьвБ6"
+c="¢"
+d="đď"
+e="єё"
+f=""
+g="9"
+h="ћђ"
+i="ї"
+j=""
+k=""
+l="1"
+m=""
+n="η"
+o="фоº●"
+p=""
+q=""
+r="ѓг"
+s="ș"
+t="ṫțł"
+u=""
+v="▼"
+w="шώŵ"
+x="ж×"
+y="џψ"
+z=""
+
+# We use this until we figure out how to pipe to or pass argument to this script.
+TEST_STRING="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only."
+
+# This variable will be used to set the amount of obfuscation
+# Put this in an argument eventually.
+OBFUSCATION_CHANCE="40"
+
+while read -rn1 character; do
+  case "$character" in
+    ("")
+      # Don’t ask me why, but spaces come through as ""
+      echo -n " "
+      ;;
+    ([a-zA-Z])
+      # If a-z or A-Z, find an alternative character, but first test against
+      # obfuscation chance to se if we should bail early
+      random_number=$((RANDOM % 100))
+      if [ "$random_number" -gt "$OBFUSCATION_CHANCE" ]; then
+        echo -n "$character"
+      else
+        # Try to put the string from <character> variable into a temp variable
+        temp_characters="${!character}"
+        if [ -n "$temp_characters" ]; then
+          # If we found a string of alternative characters, pick one at random and print
+          special_character="${temp_characters:$((RANDOM % ${#temp_characters})):1}"
+          echo -n "$special_character"
+        else
+          # If not, just print the original character
+          echo -n "$character"
+        fi
+      fi
+      ;;
+    (*)
+      # This is one of the characters we don’t transform, just print it
+      echo -n "$character"
+      ;;
+  esac
+done < <(echo -n "$TEST_STRING")
+echo
