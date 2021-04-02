@@ -14,6 +14,10 @@ OBFUSCATION_LO="10"
 OBFUSCATION_MD="50"
 OBFUSCATION_HI="100"
 OBFUSCATION_CHANCE="$OBFUSCATION_MD"
+OBFUSCATION_FT="fairytale"
+OBFUSCATION_CP="cyberpunk"
+OBFUSCATION_STYLE="default"
+SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 
 USAGE="
 ${BROWN}Usage${NC}: $0 [ARGUMENTS] [FILE|STRING]
@@ -22,74 +26,22 @@ There are three ways to input text:
   ${GREEN}1${NC}) Pipe text to this script
   ${GREEN}2${NC}) Supply a file as argument
   ${GREEN}3${NC}) Add word or words as arguments.
-     Due to how we do argument parsing, this wont’t work for the words 'lo', 'md' and 'hi'.
+
 ${BROWN}Arguments${NC}:
-  [lo|md|hi]      Level of obfuscation.
-                  Defaults to 'md', medium.
+  [--lo|--md|--hi]    Level of obfuscation.
+                      Defaults to 'md', medium.
+  [--ft|--cp]         Obfuscation style, fairytale
+                      or cyberpunk. If unset, defaults
+                      to a kitchen sink mix of styles.
 "
 HELP="
 ${BROWN}Usage examples${NC}:
   Highly obfuscate text from a file on your filesystem:
-  \$ ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter hi${NC}
+  \$ ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter --hi${NC}
 
-  Generate a mildly obfuscated version of your namn for an email signature:
-  \$ ${BLUE}bash/karakter md John Doe${NC}
+  Generate a mildly elvish version of your name for an email signature:
+  \$ ${BLUE}bash/karakter --md --ft John Doe${NC}
 "
-
-# Create alternatives for most A-Z and a-z
-A="ĄΑΔΛЉАд▲"
-B="8"
-C="©"
-D="ĎĐ"
-E="єξΣΞ3€"
-F=""
-G=""
-H="њнЂ"
-I="Ϊ1"
-J=""
-K="ќк"
-L=""
-M="м"
-N="ѝйи"
-O="фθ0"
-P=""
-Q=""
-R="яŔ®"
-S="Ș5"
-T="┬†ṪтȚŤ"
-U=""
-V=""
-W="Ŵ"
-X="χ"
-Y="Ų¥"
-Z=""
-
-a="ąάαаą@ª"
-b="ъьвБ6"
-c="¢"
-d="đď"
-e="єё"
-f=""
-g="9"
-h="ћђ"
-i="ї"
-j=""
-k=""
-l="1"
-m=""
-n="η"
-o="фоº●"
-p=""
-q=""
-r="ѓг"
-s="ș"
-t="ṫțł"
-u=""
-v="▼"
-w="шώŵ"
-x="ж×"
-y="џψ"
-z=""
 
 function handle_character() {
   character="$1"
@@ -128,16 +80,25 @@ argument=""
 
 # Handle args
 for arg in "$@"; do
-  if [ "$arg" = "lo" ] || [ "$arg" = "md" ] || [ "$arg" = "hi" ]; then
+  if [ "$arg" = "--lo" ] || [ "$arg" = "--md" ] || [ "$arg" = "--hi" ]; then
     case "$arg" in
-      "lo")
+      "--lo")
         OBFUSCATION_CHANCE="$OBFUSCATION_LO"
         ;;
-      "md")
+      "--md")
         OBFUSCATION_CHANCE="$OBFUSCATION_MD"
         ;;
       *)
         OBFUSCATION_CHANCE="$OBFUSCATION_HI"
+        ;;
+    esac
+  elif [ "$arg" = "--cp" ] || [ "$arg" = "--ft" ]; then
+    case "$arg" in
+      "--cp")
+        OBFUSCATION_STYLE="$OBFUSCATION_CP"
+        ;;
+      *)
+        OBFUSCATION_STYLE="$OBFUSCATION_FT"
         ;;
     esac
   elif [ "$arg" = "help" ] || [ "$arg" = "--help" ] || [ "$arg" = "-h" ]; then
@@ -149,6 +110,22 @@ for arg in "$@"; do
     argument="$argument $arg"
   fi
 done
+
+# Load the correct set of characters
+case "$OBFUSCATION_STYLE" in
+  "cyberpunk")
+    # shellcheck source=/dev/null
+    source "$SETS_DIR/cyberpunk.set"
+    ;;
+  "fairytale")
+    # shellcheck source=/dev/null
+    source "$SETS_DIR/fairytale.set"
+    ;;
+  *)
+    # shellcheck source=/dev/null
+    source "$SETS_DIR/default.set"
+    ;;
+esac
 
 # Define stdin
 if [ "$OSTYPE" = "linux-android" ]; then
