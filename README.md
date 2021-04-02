@@ -6,18 +6,34 @@ All characters are chosen from [this list](https://github.com/ehmicky/cross-plat
 
 At the moment, this is a bash script. My ~~plan was~~ hope is to re-write it in a few different languages that I’ve been wanting to try out.
 
+## Options
+
+### ~~Obfuscation level~~ Character
+
+You can change the level of obfuscation by supplying the arguments `--lo`, `--md`, or `--hi`. This will affect the amount of characters changed.
+
+### Style
+
+If you’re not happy with the default style, you can supply arguments `--cp` or `--ft`, for a more `¢џБ≡┎pμ∩κ` or `ƒάїгψłάľє` look, respectively.
+
 ## Usage examples
 
 Highly obfuscate text from a file on your filesystem:
 
 ```bash
-cat a_tale_of_two_cities.txt | bash/karakter hi
+cat a_tale_of_two_cities.txt | bash/karakter --hi
 ```
 
-Generate a mildly obfuscated version of your namn for an email signature:
+Generate a mildly elvish version of your name for an email signature:
 
 ```bash
-bash/karakter md John Doe
+bash/karakter --md --ft John Doe
+```
+
+Turn A Tale of Two Cities into a cyberpunk novel:
+
+```bash
+cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp
 ```
 
 ## Output examples
