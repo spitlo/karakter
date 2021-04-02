@@ -2,6 +2,37 @@
 # shellcheck disable=SC2034
 set -e
 
+# Colors
+BLUE='\033[1;34m'
+BROWN='\033[0;33m'
+GREEN='\033[1;32m'
+NC='\033[0m'
+YELLOW='\033[1;33m'
+
+# Defaults
+OBFUSCATION_LO="10"
+OBFUSCATION_MD="50"
+OBFUSCATION_HI="100"
+OBFUSCATION_CHANCE="$OBFUSCATION_MD"
+
+USAGE="
+${BROWN}Usage${NC}: $0 [ARGUMENTS] [FILE|STRING]
+Add a little flair to your text by substituting visually similar characters for your ordinary a-z and A-Z characters.
+There are three ways to input text:
+  ${GREEN}1${NC}) Pipe text to this script
+  ${GREEN}2${NC}) Supply a file as argument
+  ${GREEN}3${NC}) Add word or words as arguments.
+     Due to how we do argument parsing, this wont’t work for the words 'lo', 'md' and 'hi'.
+${BROWN}Arguments${NC}:
+  [lo|md|hi]      Level of obfuscation.
+                  Defaults to 'md', medium.
+"
+HELP="
+${BROWN}Usage examples${NC}:
+  Highly obfuscate text from a file on your filesystem:
+  ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter hi${NC}
+"
+
 # Create alternatives for most A-Z and a-z
 A="ĄΑΔΛЉАд▲"
 B="8"
@@ -57,20 +88,14 @@ x="ж×"
 y="џψ"
 z=""
 
-# We use this until we figure out how to pipe to or pass argument to this script.
-TEST_STRING="It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only."
-
-# This variable will be used to set the amount of obfuscation
-# Put this in an argument eventually.
-OBFUSCATION_CHANCE="40"
-
-while read -rn1 character; do
+function handle_character() {
+  character="$1"
   case "$character" in
-    ("")
+    "")
       # Don’t ask me why, but spaces come through as ""
       echo -n " "
       ;;
-    ([a-zA-Z])
+    [a-zA-Z])
       # If a-z or A-Z, find an alternative character, but first test against
       # obfuscation chance to se if we should bail early
       random_number=$((RANDOM % 100))
@@ -89,10 +114,62 @@ while read -rn1 character; do
         fi
       fi
       ;;
-    (*)
+    *)
       # This is one of the characters we don’t transform, just print it
       echo -n "$character"
       ;;
   esac
-done < <(echo -n "$TEST_STRING")
+}
+
+argument=""
+
+# Handle args
+for arg in "$@"; do
+  if [ "$arg" = "lo" ] || [ "$arg" = "md" ] || [ "$arg" = "hi" ]; then
+    case "$arg" in
+      "lo")
+        OBFUSCATION_CHANCE="$OBFUSCATION_LO"
+        ;;
+      "md")
+        OBFUSCATION_CHANCE="$OBFUSCATION_MD"
+        ;;
+      *)
+        OBFUSCATION_CHANCE="$OBFUSCATION_HI"
+        ;;
+    esac
+  elif [ "$arg" = "help" ] || [ "$arg" = "--help" ] || [ "$arg" = "-h" ]; then
+    echo -e "$USAGE$HELP"
+    exit 0
+  else
+    # Adding this to existing string instead of simply setting it allows us to
+    # accept unquoted sentences as arguments.
+    argument="$argument $arg"
+  fi
+done
+
+# Check if input is piped; if so read it character for character. If not,
+# see if argument supplied is a file and read it character for character.
+# If neither of these are true, assume the argument is a string of text.
+if [ -p /dev/stdin ]; then
+  while IFS= read -rn1 character; do
+    handle_character "$character"
+  done
+else
+  # If no arguments are supplied, print help and exit
+  if [ "${argument// }" = "" ]; then
+    echo -e "$USAGE"
+    exit 0
+  fi
+  if [ -f "$argument" ]; then
+    while read -rn1 character; do
+      handle_character "$character"
+    done < <(cat "$argument")
+  else
+    # Last try: Assume this is a string
+    while read -rn1 character; do
+      handle_character "$character"
+    done < <(echo "$argument")
+  fi
+fi
+
 echo

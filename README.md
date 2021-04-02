@@ -35,9 +35,9 @@ It шas tђe 6єst оf times, it ώas łhё worșt of łїmeș, їt шaș tђё 
 ## Todo
 
 - [ ] Add more alternative characters
-- [ ] Add help
-- [ ] Take arguments
-- [ ] Figure out how to handle piped text
+- [x] Add help
+- [x] Take arguments
+- [x] Figure out how to handle piped text
 - [ ] Rewrite in Ada
 - [ ] Rewrite in Nim
 - [ ] Rewrite in Zig
