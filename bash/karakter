@@ -30,7 +30,10 @@ ${BROWN}Arguments${NC}:
 HELP="
 ${BROWN}Usage examples${NC}:
   Highly obfuscate text from a file on your filesystem:
-  ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter hi${NC}
+  \$ ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter hi${NC}
+
+  Generate a mildly obfuscated version of your namn for an email signature:
+  \$ ${BLUE}bash/karakter md John Doe${NC}
 "
 
 # Create alternatives for most A-Z and a-z

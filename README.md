@@ -6,7 +6,21 @@ All characters are chosen from [this list](https://github.com/ehmicky/cross-plat
 
 At the moment, this is a bash script. My ~~plan was~~ hope is to re-write it in a few different languages that I’ve been wanting to try out.
 
-## Examples
+## Usage examples
+
+Highly obfuscate text from a file on your filesystem:
+
+```bash
+cat a_tale_of_two_cities.txt | bash/karakter hi
+```
+
+Generate a mildly obfuscated version of your namn for an email signature:
+
+```bash
+bash/karakter md John Doe
+```
+
+## Output examples
 
 ### Input text
 
