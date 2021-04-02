@@ -1,6 +1,6 @@
 # Karakter
 
-Add a little character to your text by substituting visually similar characters from the greek or cyrillic alphabet for your ordinary a-z and A-Z characters. Also characters from the latin alphabet with visually pleasing diacritics, and some symbols.
+Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼їșua11y șїmїlar ch@ѓacṫєгs fг●m ṫђe 9ѓeek or ¢yrїl1ї¢ аlphaБёt fоr youг orđїηάry a-z aηď A-Z cђаг@¢tёгș. A1șф ¢haracṫeгș from tћe 1ątin a1phαъet wїṫђ ▼ișua1ly p1easїη9 dїa¢rїtї¢ș, anđ sоmё sψmbф1s.
 
 All characters are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of characters that work on most terminals.
 
