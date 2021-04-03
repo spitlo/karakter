@@ -70,7 +70,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [x] Add help
 - [x] Take arguments
 - [x] Figure out how to handle piped text
-- [ ] Add options for all lower/upper case?
+- [x] ~~Add options for all lower/upper case?~~
 - [ ] Rewrite in Ada
 - [ ] Rewrite in Nim
 - [ ] Rewrite in Zig
