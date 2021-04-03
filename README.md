@@ -5,6 +5,13 @@ Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼ї�
 All characters are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of characters that work on most terminals.
 
 At the moment, this is a bash script. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
+## Supplying text
+
+There are three ways to supply input text to this script:
+
+  1) Add a file as argument
+  2) Add word or words as arguments
+  3) Pipe text to it
 
 ## Options
 
@@ -21,7 +28,7 @@ If you’re not happy with the default style, you can supply arguments `--cp` or
 Highly obfuscate text from a file on your filesystem:
 
 ```bash
-cat a_tale_of_two_cities.txt | bash/karakter --hi
+bash/karakter a_tale_of_two_cities.txt --hi
 ```
 
 Generate a mildly elvish version of your name for an email signature:
@@ -30,10 +37,10 @@ Generate a mildly elvish version of your name for an email signature:
 bash/karakter --md --ft John Doe
 ```
 
-Turn A Tale of Two Cities into a cyberpunk novel:
+Turn A Tale of Two Cities into a cyberpunk novel and read it in your terminal:
 
 ```bash
-cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp
+cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less
 ```
 
 ## Output examples

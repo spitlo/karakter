@@ -22,10 +22,10 @@ SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 USAGE="
 ${BROWN}Usage${NC}: $0 [ARGUMENTS] [FILE|STRING]
 Add a little flair to your text by substituting visually similar characters for your ordinary a-z and A-Z characters.
-There are three ways to input text:
-  ${GREEN}1${NC}) Pipe text to this script
-  ${GREEN}2${NC}) Supply a file as argument
-  ${GREEN}3${NC}) Add word or words as arguments.
+There are three ways to supply input text to this script:
+  ${GREEN}1${NC}) Add a file as argument
+  ${GREEN}2${NC}) Add word or words as arguments
+  ${GREEN}3${NC}) Pipe text to it
 
 ${BROWN}Arguments${NC}:
   [--lo|--md|--hi]    Level of obfuscation.
@@ -37,13 +37,13 @@ ${BROWN}Arguments${NC}:
 HELP="
 ${BROWN}Usage examples${NC}:
   Highly obfuscate text from a file on your filesystem:
-  \$ ${BLUE}cat a_tale_of_two_cities.txt | bash/karakter --hi${NC}
+  \$ ${BLUE}bash/karakter a_tale_of_two_cities.txt --hi${NC}
 
   Generate a mildly elvish version of your name for an email signature:
   \$ ${BLUE}bash/karakter --md --ft John Doe${NC}
 
-  Turn A Tale of Two Cities into a cyberpunk novel:
-  \$ ${BLUE}cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp${NC}
+  Turn A Tale of Two Cities into a cyberpunk novel and read it in your terminal:
+  \$ ${BLUE}cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less${NC}
 "
 
 function handle_character() {
@@ -108,11 +108,14 @@ for arg in "$@"; do
     echo -e "$USAGE$HELP"
     exit 0
   else
-    # Adding this to existing string instead of simply setting it allows us to
+    # Concatenating this to existing string instead of simply setting it allows us to
     # accept unquoted sentences as arguments.
     argument="$argument $arg"
   fi
 done
+
+# Remove spaces from argument that have been added by concatenation
+argument="${argument// }"
 
 # Load the correct set of characters
 case "$OBFUSCATION_STYLE" in
@@ -148,7 +151,7 @@ if [ -p "$STDIN" ]; then
   done
 else
   # If no arguments are supplied, print help and exit
-  if [ "${argument// }" = "" ]; then
+  if [ "$argument" = "" ]; then
     echo -e "$USAGE"
     exit 0
   fi
