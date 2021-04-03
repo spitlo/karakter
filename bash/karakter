@@ -79,6 +79,14 @@ function handle_character() {
   esac
 }
 
+function handle_line() {
+  line="$1"
+  while read -rn1 character; do
+    handle_character "$character"
+  done < <(echo "$line")
+  echo
+}
+
 argument=""
 
 # Handle args
@@ -146,8 +154,8 @@ fi
 # see if argument supplied is a file and read it character for character.
 # If neither of these are true, assume the argument is a string of text.
 if [ -p "$STDIN" ]; then
-  while IFS= read -rn1 character; do
-    handle_character "$character"
+  while IFS= read -re line; do
+    handle_line "$line"
   done
 else
   # If no arguments are supplied, print help and exit
@@ -156,13 +164,13 @@ else
     exit 0
   fi
   if [ -f "$argument" ]; then
-    while read -rn1 character; do
-      handle_character "$character"
+    while read -e line; do
+      handle_line "$line"
     done < <(cat "$argument")
   else
     # Last try: Assume this is a string
-    while read -rn1 character; do
-      handle_character "$character"
+    while read -e line; do
+      handle_line "$line"
     done < <(echo "$argument")
   fi
 fi

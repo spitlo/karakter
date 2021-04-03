@@ -72,7 +72,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 
 ## Todo
 
-- [ ] Handle newlines
+- [x] Handle newlines
 - [x] Add more alternative characters
 - [x] Enable different styles?
 - [x] Improve different styles
