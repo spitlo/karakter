@@ -1,10 +1,10 @@
 # Karakter
 
-Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼їșua11y șїmїlar ch@ѓacṫєгs fг●m ṫђe 9ѓeek or ¢yrїl1ї¢ аlphaБёt fоr youг orđїηάry a-z aηď A-Z cђаг@¢tёгș. A1șф ¢haracṫeгș from tћe 1ątin a1phαъet wїṫђ ▼ișua1ly p1easїη9 dїa¢rїtї¢ș, anđ sоmё sψmbф1s.
+Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼їșua11y șїmїlar ch@ѓacṫєгs fг●m ṫђe 9ѓeek or ¢yrїl1ї¢ аlphaБёt fоr youг orđїηάry `a-z` aηď `A-Z` cђаг@¢tёгș. A1șф ¢haracṫeгș from tћe 1ątin a1phαъet wїṫђ ▼ișua1ly p1easїη9 dїa¢rїtї¢ș, anđ sоmё sψmbф1s.
 
 All characters are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of characters that work on most terminals.
 
-At the moment, this is a bash script. My ~~plan was~~ hope is to re-write it in a few different languages that I’ve been wanting to try out.
+At the moment, this is a bash script. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
 
 ## Options
 
@@ -50,16 +50,16 @@ It was the best of times, it was the worst of times, it was the age of wisdom, i
 It ŵas thє beșt оf timєs, їt was thє worst of times, it waș the αge of wisdom, it was the ąge of foolїshness, it was the epoch of belief, iț ώas łhe epо¢ђ of incredulity, it шas the seąson of Light, it was the seasфη of Đarkness, it was the șpring of hope, it waș țhe winter of despair, we ђαd everything beforє us, we haď nothing before us, ŵe werє a11 going dire¢t to Heaven, we werє all going dїrёct tћe other way – in shoѓt, the pєriod was so fаr 1ike the present period, that some of its nфisiest authoгiłies iηsisted оn ițs bєing recёived, for gooď оr for evїl, in țhe șuperlative degгeё of comparison only.
 ```
 
-### Output text, obfuscation level medium
+### Output text, obfuscation level medium, cyberpunk style
 
 ```txt
-It шas tђe 6єst оf times, it ώas łhё worșt of łїmeș, їt шaș tђё a9e of wisđom, it шaș the age of fo●lїșhηeșș, it шas tћe єpo¢ћ of bёlief, їt was tђё ep●ch фf in¢ѓєdu1ity, їṫ was tђe sёąșoη of Ligћt, їt w@ș thє șёașon of Daгknєșs, it was tђe spring of ђope, iț ώąș țhє шiηțer of despaїг, шe had evєгψłhin9 befoѓe us, wё ћάd ηoṫhїng Бefore us, wє weгє all 9оїng đirёct to Heaven, ώё шёгe ªll goiηg dїrєct tћe ●thєr wаy – in șђort, tћe perїºd wąs so fąr likє thё prёsёnt perїoď, tђaț șomє ºf їțs noisiёst ąuthфrїtїes inșisțeď ●η iłs 6ein9 гe¢єїved, foг gooď or fоѓ є▼їl, in the șuperlątive degrёe фf cфmpаrїsоn on1ψ.
+It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ аg≡ o⌠ w¡$ďøm, ī┪ ш@s thє ag≡ оf fo●lishπes$, iŁ шas Łhe ≡pø¢H ●f belıef, iŁ ша$ tHє ep●ch о⌠ :nc┍єďulity, īŁ wα$ ┪h≡ $ea$o∩ оf Ľi9ht, īŁ w@$ ŁHe sє@$■Π of Daяκπє$$, :Ł wα$ tHє $p┎īn9 о⌠ høp≡, iŁ ш@s tHe wint≡r of ďєsp@ıя, шє Hαd e▼eгy┪h¡∩g bє⌠оre u$, we Hαď ∩o┪H¡Πg 6єfoгє u$, шe шe┎e αll go¡π9 ďi┎≡ct ┪o He@▼en, we шє┍e a1l 9■iΠg ďir≡ct ŁHe o┪her ш@џ – ¡n $Hort, thє p≡г¡●ď was $o fаr lıke the p┎≡$e∩t pe┍ioď, tHat s●mє ■f it$ πoisie$┪ aμ┪Hor:t:≡s ins:steď ●n its b≡ın9 гec≡ived, fø┎ 9ø●d оr ⌠●r ≡▼ı1, in Łh≡ sup≡гlα┪īvє ďegr≡є о⌠ ¢ompaгıson o∩1y.
 ```
 
-### Output text, obfuscation level high
+### Output text, obfuscation level high, fairytale style
 
 ```txt
-1ł шаș ṫђє 6єșț ●f łїmёș, їț ŵάș țђє ώºгșț ºf țїmёș, їṫ ώάș łћё @9ё ●f ώїșďфm, їł ώąș ṫђє ą9є ºf fºº1їșћηєșș, їł ώаș łћё єp●¢ђ ºf 6є1їєf, їł ŵаș łђє ёp●¢ђ фf їη¢ѓєďu1їłψ, їł шąș ṫћё șєάșоη оf Lї9ђł, їț ш@ș łђё șєąșфη фf Đ@гkηёșș, їł ώαș łћє șpѓїη9 ºf ђоpё, їṫ ώªș ṫћє ώїηłєг фf ďёșpąїѓ, ŵё ђаď ё▼єѓψłћїη9 6єfºѓє uș, шє ђąđ ηоṫђїη9 ъёfºѓє uș, ŵё ώєгє α11 9оїη9 đїѓє¢ł ł● нєά▼ёη, ώё ŵёѓё ą11 9оїη9 ďїѓє¢ț ṫђє оłђёѓ ŵ@џ – їη șђфгṫ, ṫђё pєѓїфđ ώ@ș șф fąг 1їkё ṫђє pгёșєηł pёгїоď, țћ@ț șоmё ºf їṫș ηºїșїёșț ąuṫђогїłїєș їηșїșțєď ●η їłș ъєїη9 гє¢єї▼єđ, fог 9фоď фѓ fфѓ ё▼ї1, їη łћё șupєѓ1аțї▼є ďё9гёё фf ¢ºmpаѓїșфη оη1џ.
+Ϊṫ шάș ṫђё вєșṫ ºḟ łΐṁєș, ΐł шάș łћё ώºѓșṫ фƒ țΐṁēș, ΐț ώάș ṫђё ąġē σƒ шΐșδσṁ, ΐṫ шάș ṫђє ąġё σƒ ƒооļїșћηєșș, їł шąș łђё єpºςђ ºƒ Бēļїēƒ, їṫ шąș ṫћё єpоςђ фḟ їņςѓєδΰľїłψ, їł ŵąș łђē șєąșфņ фḟ Ļїġђț, ΐł ŵąș łђё șёąșфņ ºḟ Ďąѓkņēșș, їł ώάș țђē șpгїηġ фḟ ђºpē, їṫ ŵąș ṫђє ŵїņțєѓ σḟ ďєșpαΐг, ώё ћαḋ ēνёѓџłћΐñġ вēƒσгє ΰș, шё ђάđ ησṫђΐηġ ḃёƒºѓё υș, ώё ŵєгē αļľ ġºїņġ ďΐѓєςł țф нєάνєη, ώє шєѓē άľļ ġфїņġ ďΐѓєςț ṫћē фṫћёг шąψ – ΐņ șћσѓṫ, ṫђē pёѓΐºđ ŵάș șº ƒάѓ ľΐkē țђё pгёșєñṫ pёѓїоδ, ṫћάł șºṁє оḟ ΐțș ñºΐșїєșł ąΰțћфѓїṫΐєș ΐñșїșłēď ºņ ΐłș Бєїņġ ѓēςёΐνēđ, ḟог ġºфđ σѓ ƒºг ēνΐľ, їη ṫђє șΰpєѓľάṫΐνē δєġѓєё ºḟ ςºṁpαгΐșоñ оņľψ.
 ```
 
 ## Todo
