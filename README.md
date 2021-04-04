@@ -52,7 +52,7 @@ cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less
 It was the best of times, it was the worst of times, it was the age of wisdom, it was the age of foolishness, it was the epoch of belief, it was the epoch of incredulity, it was the season of Light, it was the season of Darkness, it was the spring of hope, it was the winter of despair, we had everything before us, we had nothing before us, we were all going direct to Heaven, we were all going direct the other way – in short, the period was so far like the present period, that some of its noisiest authorities insisted on its being received, for good or for evil, in the superlative degree of comparison only.
 ```
 
-### Output text, obfuscation level low
+### Output text, obfuscation level low, default style
 
 ```txt
 It ŵas thє beșt оf timєs, їt was thє worst of times, it waș the αge of wisdom, it was the ąge of foolїshness, it was the epoch of belief, iț ώas łhe epо¢ђ of incredulity, it шas the seąson of Light, it was the seasфη of Đarkness, it was the șpring of hope, it waș țhe winter of despair, we ђαd everything beforє us, we haď nothing before us, ŵe werє a11 going dire¢t to Heaven, we werє all going dїrёct tћe other way – in shoѓt, the pєriod was so fаr 1ike the present period, that some of its nфisiest authoгiłies iηsisted оn ițs bєing recёived, for gooď оr for evїl, in țhe șuperlative degгeё of comparison only.
