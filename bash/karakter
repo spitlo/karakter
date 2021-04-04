@@ -21,13 +21,13 @@ SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 
 USAGE="
 ${BROWN}Usage${NC}: $0 [ARGUMENTS] [FILE|STRING]
-Add a little flair to your text by substituting visually similar characters for your ordinary a-z and A-Z characters.
+Add a little character to your text by substituting visually similar glyphs for letters a-z and A-Z.
 There are three ways to supply input text to this script:
   ${GREEN}1${NC}) Add a file as argument
   ${GREEN}2${NC}) Add word or words as arguments
   ${GREEN}3${NC}) Pipe text to it
 
-${BROWN}Arguments${NC}:
+${BROWN}Options${NC}:
   [--lo|--md|--hi]    Level of obfuscation.
                       Defaults to 'md', medium.
   [--ft|--cp]         Obfuscation style, fairytale
@@ -164,12 +164,12 @@ else
     exit 0
   fi
   if [ -f "$argument" ]; then
-    while read -e line; do
+    while read -re line; do
       handle_line "$line"
     done < <(cat "$argument")
   else
     # Last try: Assume this is a string
-    while read -e line; do
+    while read -re line; do
       handle_line "$line"
     done < <(echo "$argument")
   fi
