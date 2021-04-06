@@ -2,7 +2,7 @@
 
 Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼їșua11y șїmїlar 91ypђs fг●m ṫђe 9ѓeek or ¢yrїl1ї¢ аlphaБёt fоr 1ёłteгș `a-z` aηď `A-Z`. A1șф 9lџpђș from tћe 1ątin a1phαъet wїṫђ ▼ișua1ly p1easїη9 dїa¢rїtї¢ș, anđ sоmё sψmbф1s.
 
-All hlyphs are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of "All the characters that work on most terminals".
+All glyphs are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of "All the characters that work on most terminals".
 
 At the moment, this is a bash script. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
 
