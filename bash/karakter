@@ -141,23 +141,10 @@ case "$OBFUSCATION_STYLE" in
     ;;
 esac
 
-# Define stdin
-if [ "$OSTYPE" = "linux-android" ]; then
-  # Probably Termux?
-  STDIN="/proc/self/fd/0"
-else
-  # This will work on macos at least
-  STDIN="/dev/stdin"
-fi
-
 # Check if input is piped; if so read it character for character. If not,
 # see if argument supplied is a file and read it character for character.
 # If neither of these are true, assume the argument is a string of text.
-if [ -p "$STDIN" ]; then
-  while IFS= read -re line; do
-    handle_line "$line"
-  done
-else
+if [ -t 0 ]; then
   # If no arguments are supplied, print help and exit
   if [ "$argument" = "" ]; then
     echo -e "$USAGE"
@@ -173,6 +160,10 @@ else
       handle_line "$line"
     done < <(echo "$argument")
   fi
+else
+  while IFS= read -re line; do
+    handle_line "$line"
+  done
 fi
 
 echo
