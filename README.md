@@ -80,6 +80,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [x] Take arguments
 - [x] Figure out how to handle piped text
 - [x] ~~Add options for all lower/upper case?~~
+- [ ] Enable decoding obfuscated text?
 - [ ] Rewrite in Ada
 - [ ] Rewrite in Nim
 - [ ] Rewrite in Zig
