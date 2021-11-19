@@ -29,7 +29,7 @@ If you’re not happy with the default style, you can supply arguments `--cp` or
 Highly obfuscate text from a file on your filesystem:
 
 ```bash
-bash/karakter a_tale_of_two_cities.txt --hi
+bash/karakter test.txt --hi
 ```
 
 Generate a mildly elvish version of your name for an email signature:
@@ -41,7 +41,7 @@ bash/karakter --md --ft John Doe
 Turn A Tale of Two Cities into a cyberpunk novel and read it in your terminal:
 
 ```bash
-cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less
+cat test.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less
 ```
 
 ## Output examples
