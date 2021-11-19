@@ -3,7 +3,7 @@
 import parseopt, pegs, os, strformat
 
 type CmdParsedList* = object
-  path*: seq[string]
+  args*: seq[string]
   isReadonly*: bool
 
 proc staticReadVersionFromNimble: string {.compileTime.} =
@@ -63,7 +63,7 @@ proc parseCommandLineOption*(line: seq[string]): CmdParsedList =
   for kind, key, val in parsedLine.getopt():
     case kind:
       of cmdArgument:
-        result.path.add(key)
+        result.args.add(key)
       of cmdShortOption:
         case key:
           of "v": writeVersion()
