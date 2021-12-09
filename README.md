@@ -87,4 +87,5 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [ ] Rewrite in Nim
 - [ ] Rewrite in Red
 - [ ] Rewrite in Rust
+- [ ] Rewrite in V
 - [ ] Rewrite in Zig
