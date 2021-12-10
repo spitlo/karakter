@@ -27,7 +27,6 @@ const fairytale* = CharacterSet(
   X: "χЖ",
   Y: "Ų¥Ϋψ",
   Z: "",
-
   a: "ąάαą",
   b: "вБḃ",
   c: "¢ς",

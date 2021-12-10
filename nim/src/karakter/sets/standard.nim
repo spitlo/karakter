@@ -1,6 +1,6 @@
 import types
 
-const default* = CharacterSet(
+const standard* = CharacterSet(
   A: "ĄΑΔΛЉАд▲",
   B: "8",
   C: "©",
@@ -27,7 +27,6 @@ const default* = CharacterSet(
   X: "χ",
   Y: "Ų¥",
   Z: "",
-
   a: "ąάαаą@ª",
   b: "ъьвБ6",
   c: "¢",

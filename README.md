@@ -80,7 +80,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [x] Take arguments
 - [x] Figure out how to handle piped text
 - [x] ~~Add options for all lower/upper case?~~
-- [ ] Make a bash script that generates sets for all languages
+- [x] Make a bash script that generates sets for all languages
 - [ ] Enable decoding obfuscated text?
 - [ ] Rewrite in Ada
 - [ ] Rewrite in Dart

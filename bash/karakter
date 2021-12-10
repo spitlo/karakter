@@ -16,7 +16,7 @@ OBFUSCATION_HI="100"
 OBFUSCATION_CHANCE="$OBFUSCATION_MD"
 OBFUSCATION_FT="fairytale"
 OBFUSCATION_CP="cyberpunk"
-OBFUSCATION_STYLE="default"
+OBFUSCATION_STYLE="standard"
 SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 
 USAGE="
@@ -37,13 +37,13 @@ ${BROWN}Options${NC}:
 HELP="
 ${BROWN}Usage examples${NC}:
   Highly obfuscate text from a file on your filesystem:
-  \$ ${BLUE}bash/karakter a_tale_of_two_cities.txt --hi${NC}
+  \$ ${BLUE}bash/karakter test.txt --hi${NC}
 
   Generate a mildly elvish version of your name for an email signature:
   \$ ${BLUE}bash/karakter --md --ft John Doe${NC}
 
   Turn A Tale of Two Cities into a cyberpunk novel and read it in your terminal:
-  \$ ${BLUE}cat a_tale_of_two_cities.txt | tr [a-z] [A-Z] | bash/karakter --hi --cp | less${NC}
+  \$ ${BLUE}cat test.txt | tr a-z A-Z | bash/karakter --hi --cp | less${NC}
 "
 
 function handle_character() {
@@ -137,7 +137,7 @@ case "$OBFUSCATION_STYLE" in
     ;;
   *)
     # shellcheck source=/dev/null
-    source "$SETS_DIR/default.set"
+    source "$SETS_DIR/standard.set"
     ;;
 esac
 

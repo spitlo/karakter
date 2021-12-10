@@ -1,7 +1,48 @@
 #!/usr/bin/env bash
-# shellcheck disable=SC2034
+# shellcheck disable=SC2034,SC1090
 set -e
 
-echo "This is a tool to generate sets for different languages using the bash sets as source of truth."
+# This is a tool to generate sets for different languages using the bash sets as source of truth.
+# It does not escape $ at the moment, perhaps we need to fix that.
 
-echo "It is not at all functioning at the moment."
+sets=(
+  "cyberpunk" \
+  "fairytale" \
+  "standard" \
+)
+
+function generate_nim_sets() {
+  source "./bash/sets/$1.set"
+  file="./nim/src/karakter/sets/$1.nim"
+  cat << EOF > "$file"
+import types
+
+const $1* = CharacterSet(
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # A: "ΔΛА▲4",
+    echo "  $character: \"$substitutes\"," >> "$file"
+  done
+  echo ")" >> "$file"
+}
+
+function generate_v_sets() {
+  source "./bash/sets/$1.set"
+  file="./v/sets/$1.v"
+  cat << EOF > "$file"
+module sets
+
+pub const standard = {
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # `A`: 'ΔΛА▲4'
+    echo "  \`$character\`: \'$substitutes\'," >> "$file"
+  done
+  echo "}" >> "$file"
+}
+
+for set in "${sets[@]}"; do
+  generate_nim_sets "$set"
+done
