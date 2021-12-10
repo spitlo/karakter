@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# shellcheck disable=SC2034
+set -e
+
+echo "This is a tool to generate sets for different languages using the bash sets as source of truth."
+
+echo "It is not at all functioning at the moment."
