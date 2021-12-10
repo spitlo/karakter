@@ -4,7 +4,7 @@ Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼ї�
 
 All glyphs are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of "All the characters that work on most terminals".
 
-At the moment, this is a bash script. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
+At the moment, this is a bash script. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out. All versions other than bash are WIP.
 
 ## Supplying text
 
