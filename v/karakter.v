@@ -43,8 +43,8 @@ fn main() {
 			// Why doesn’t exit() work here?
 			return
 		}
-		if additional_args.len > 1 {
-			file := additional_args[1]
+		if additional_args.len > 0 {
+			file := additional_args[0]
 			full_text = os.read_file(file.trim_space()) or { '' }
 			if full_text.len == 0 {
 				// File read failed, assume additional args are words to handle.
