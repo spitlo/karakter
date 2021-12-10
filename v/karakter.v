@@ -3,6 +3,8 @@ module main
 import os
 import cli { Command, Flag }
 
+const is_pipe = (os.is_atty(0) == 0)
+
 fn main() {
 	mut cmd := Command{
 		name: 'karakter'
@@ -48,4 +50,5 @@ fn karakter(cmd Command) ? {
 
 	println('Obfuscation level: $obfuscation_level')
 	println('Obfuscation style $obfuscation_style')
+	println('Is this a pipe? $is_pipe')
 }
