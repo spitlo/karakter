@@ -1,42 +1,49 @@
 module main
 
 import os
-import cli { Command, Flag }
+import flag
 
 const is_pipe = (os.is_atty(0) == 0)
 
 fn main() {
-	mut cmd := Command{
-		name: 'karakter'
-		description: 'Add a little character to your text'
-		usage: 'karakter'
-		version: '0.1.0'
-		execute: karakter
+	mut fp := flag.new_flag_parser(os.args)
+
+	fp.application('karakter')
+	fp.version('0.1.0')
+	fp.description('Add a little character to your text')
+	fp.usage_example('')
+	fp.skip_executable()
+
+	obfuscation := fp.string('obfuscation', `o`, '', 'Level of obfuscation, "lo" or "hi". Defaults to medium.')
+	style := fp.string('style', `s`, '', 'Obfuscation style, "ft" for fairytale or "cp" for cyberpunk. Defaults to a kitchen sink mix of styles.')
+	// Check if this is a pipe. If it is, we don’t require additional args.
+	// If not, assume (but confirm) that the argument is a file.
+	// If it’s not a file, take it as input.
+	mut full_text := ''
+	if is_pipe {
+		full_text = os.get_raw_lines_joined()
+	} else {
+		mut additional_args := fp.finalize() or {
+			println(fp.usage())
+			// Why doesn’t exit() work here?
+			return
+		}
+		if additional_args.len > 1 {
+			file := additional_args[1]
+			full_text = os.read_file(file.trim_space()) or { '' }
+			if full_text.len == 0 {
+				// File read failed, assume additional args are words to handle.
+				full_text = additional_args.join(' ')
+			}
+		} else {
+			println(fp.usage())
+			exit(0)
+		}
 	}
 
-	cmd.add_flag(Flag{
-		flag: .string
-		required: false
-		name: 'obfuscation'
-		abbrev: 'o'
-		description: 'Level of obfuscation, "lo" or "hi". Defaults to medium.'
-	})
+	println('Text to handle:')
+	println(full_text)
 
-	cmd.add_flag(Flag{
-		flag: .string
-		required: false
-		name: 'style'
-		abbrev: 's'
-		description: 'Obfuscation style, "ft" for fairytale or "cp" for cyberpunk. Defaults to a kitchen sink mix of styles.'
-	})
-
-	cmd.setup()
-	cmd.parse(os.args)
-}
-
-fn karakter(cmd Command) ? {
-	obfuscation := cmd.flags.get_string('obfuscation') ?
-	style := cmd.flags.get_string('style') ?
 	obfuscation_level := match obfuscation {
 		'lo' { 10 }
 		'hi' { 100 }
@@ -50,5 +57,4 @@ fn karakter(cmd Command) ? {
 
 	println('Obfuscation level: $obfuscation_level')
 	println('Obfuscation style $obfuscation_style')
-	println('Is this a pipe? $is_pipe')
 }
