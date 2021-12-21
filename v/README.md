@@ -8,7 +8,9 @@ To build the `karakter` binary, you need to install [V](https://vlang.io). Then 
 v v/karakter.v
 ```
 
-This creates a binary executable in the `v` directory. You can run the command with `v/karakter`.
+If you don’t want to bother with remembering individual build commands, just run `bin/build v` from the root folder.
+
+Any of these methods create a binary executable in the `v` directory. You can run the command with `v/karakter`.
 
 ## Supplying text
 

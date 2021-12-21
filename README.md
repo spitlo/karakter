@@ -6,6 +6,26 @@ All glyphs are chosen from [this list](https://github.com/ehmicky/cross-platform
 
 At the moment, there are two working versions: one written in Bash and one written in V. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
 
+## Building
+
+To build the `karakter` binaries, you need to install the corresponding languages.
+
+Each version has build instructions in their separate READMEs, but generally you can build any version by running `bin/build <language>` from the root folder. For example, running:
+
+```bash
+bin/build v
+```
+
+will build the V version (given that you have V installed.) You can then run it by typing:
+
+```bash
+v/karakter
+```
+
+All commands might not have the exact same set of options, but all present you with a help text when run without any arguments.
+
+The Bash version, available at `bash/karakter` does not need any installation, you should be able to run it as-is with bash 4.x or 5.x but it’s not comprehensively tested..
+
 ## Output examples
 
 ### Input text
