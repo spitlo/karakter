@@ -119,7 +119,7 @@ function build_nim() {
 function build_v() {
   echo -e "Building ${BLUE}v${NC} version"
   if exists v; then
-    cd v && v build && cd ..
+    v v/karakter.v
   else
     echo -e "${RED}Error:${NC}"
     echo -e "You seem to be missing ${BLUE}v${NC}."
