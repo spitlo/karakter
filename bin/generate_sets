@@ -33,16 +33,17 @@ function generate_v_sets() {
   cat << EOF > "$file"
 module sets
 
-pub const standard = {
+pub const $1 = {
 EOF
   for character in {{A..Z},{a..z}}; do
     substitutes="${!character}"
     # `A`: 'ΔΛА▲4'
-    echo "  \`$character\`: \'$substitutes\'," >> "$file"
+    echo "  \`$character\`: '$substitutes'" >> "$file"
   done
   echo "}" >> "$file"
 }
 
 for set in "${sets[@]}"; do
   generate_nim_sets "$set"
+  generate_v_sets "$set"
 done
