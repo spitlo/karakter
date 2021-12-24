@@ -11,7 +11,7 @@ sets=(
   "standard" \
 )
 
-function generate_nim_sets() {
+function generate_nim_set() {
   source "./bash/sets/$1.set"
   file="./nim/src/karakter/sets/$1.nim"
   cat << EOF > "$file"
@@ -27,7 +27,7 @@ EOF
   echo ")" >> "$file"
 }
 
-function generate_v_sets() {
+function generate_v_set() {
   source "./bash/sets/$1.set"
   file="./v/sets/$1.v"
   cat << EOF > "$file"
@@ -43,7 +43,24 @@ EOF
   echo "}" >> "$file"
 }
 
+function generate_zig_set() {
+  source "./bash/sets/$1.set"
+  file="./zig/src/sets/$1.zig"
+  cat << EOF > "$file"
+const types = @import("types.zig");
+
+pub const set = types.Set{
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # .A = "ΔΛА▲4",
+    echo "  .$character = \"$substitutes\"," >> "$file"
+  done
+  echo "};" >> "$file"
+}
+
 for set in "${sets[@]}"; do
-  generate_nim_sets "$set"
-  generate_v_sets "$set"
+  generate_nim_set "$set"
+  generate_v_set "$set"
+  generate_zig_set "$set"
 done
