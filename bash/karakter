@@ -127,9 +127,6 @@ for arg in "$@"; do
   fi
 done
 
-# Remove spaces from argument that have been added by concatenation
-argument="${argument// }"
-
 # Load the correct set of characters
 case "$OBFUSCATION_STYLE" in
   "cyberpunk")
@@ -153,16 +150,17 @@ esac
 # Check if input is piped; if so read it character for character. If not,
 # see if argument supplied is a file and read it character for character.
 # If neither of these are true, assume the argument is a string of text.
+trimmed_arguments="${argument// }"
 if [ -t 0 ]; then
   # If no arguments are supplied, print help and exit
-  if [ "$argument" = "" ]; then
+  if [ "$trimmed_arguments" = "" ]; then
     echo -e "$USAGE"
     exit 0
   fi
-  if [ -f "$argument" ]; then
+  if [ -f "$trimmed_arguments" ]; then
     while read -re line; do
       handle_line "$line"
-    done < <(cat "$argument")
+    done < <(cat "$trimmed_arguments")
   else
     # Last try: Assume this is a string
     while read -re line; do
