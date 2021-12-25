@@ -22,9 +22,9 @@ will build the V version (given that you have V installed.) You can then run it 
 v/karakter
 ```
 
-All commands might not have the exact same set of options, but all present you with a help text when run without any arguments.
+All commands might not have the exact same set of options, but all should present you with a help text when run without any arguments.
 
-The Bash version, available at `bash/karakter` does not need any installation, you should be able to run it as-is with bash 4.x or 5.x but it’s not comprehensively tested..
+The Bash version, available at `bash/karakter` does not need any installation, you should be able to run it as-is with bash 4.x or 5.x but it’s not comprehensively tested.
 
 ## Output examples
 
@@ -52,6 +52,19 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 Ϊṫ шάș ṫђё вєșṫ ºḟ łΐṁєș, ΐł шάș łћё ώºѓșṫ фƒ țΐṁēș, ΐț ώάș ṫђё ąġē σƒ шΐșδσṁ, ΐṫ шάș ṫђє ąġё σƒ ƒооļїșћηєșș, їł шąș łђё єpºςђ ºƒ Бēļїēƒ, їṫ шąș ṫћё єpоςђ фḟ їņςѓєδΰľїłψ, їł ŵąș łђē șєąșфņ фḟ Ļїġђț, ΐł ŵąș łђё șёąșфņ ºḟ Ďąѓkņēșș, їł ώάș țђē șpгїηġ фḟ ђºpē, їṫ ŵąș ṫђє ŵїņțєѓ σḟ ďєșpαΐг, ώё ћαḋ ēνёѓџłћΐñġ вēƒσгє ΰș, шё ђάđ ησṫђΐηġ ḃёƒºѓё υș, ώё ŵєгē αļľ ġºїņġ ďΐѓєςł țф нєάνєη, ώє шєѓē άľļ ġфїņġ ďΐѓєςț ṫћē фṫћёг шąψ – ΐņ șћσѓṫ, ṫђē pёѓΐºđ ŵάș șº ƒάѓ ľΐkē țђё pгёșєñṫ pёѓїоδ, ṫћάł șºṁє оḟ ΐțș ñºΐșїєșł ąΰțћфѓїṫΐєș ΐñșїșłēď ºņ ΐłș Бєїņġ ѓēςёΐνēđ, ḟог ġºфđ σѓ ƒºг ēνΐľ, їη ṫђє șΰpєѓľάṫΐνē δєġѓєё ºḟ ςºṁpαгΐșоñ оņľψ.
 ```
 
+## Languages
+
+- [ ] [Ada](https://www.adaic.org/)
+- [x] [Bash](https://www.gnu.org/software/bash/)
+- [ ] [Dart](https://dart.dev/)
+- [ ] [Fortran](https://fortran-lang.org/)
+- [ ] [Nim](https://nim-lang.org/)
+- [ ] [OCaml](https://ocaml.org/)
+- [ ] [Red](https://www.red-lang.org/)
+- [ ] [Rust](https://www.rust-lang.org/)
+- [x] [V](https://vlang.io/)
+- [ ] [Zig](https://ziglang.org/)
+
 ## Todo
 
 - [x] Handle newlines
@@ -64,11 +77,4 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [x] ~~Add options for all lower/upper case?~~
 - [x] Make a bash script that generates sets for all languages
 - [ ] Enable decoding obfuscated text?
-- [ ] Rewrite in Ada
-- [ ] Rewrite in Dart
-- [ ] Rewrite in Fortran
-- [ ] Rewrite in Nim
-- [ ] Rewrite in Red
-- [ ] Rewrite in Rust
-- [x] Rewrite in V
-- [ ] Rewrite in Zig
+- [ ] Command to generate bash completions?
