@@ -16,7 +16,7 @@ You can change the level of obfuscation by supplying the arguments `--lo`, `--md
 
 ### Style
 
-If you’re not happy with the default style, you can supply arguments `--cp` or `--ft`, for a more `¢џБ≡┎pμ∩κ` or `ƒάїгψłάľє` look, respectively.
+If you’re not happy with the default style, you can supply arguments `--cp`, `--ft` or `--lm`, for a more `¢џБ≡┎pμ∩κ`, `ƒάїгψłάľє` or `LŌŪĐMŌŪṪH` look, respectively.
 
 ## Usage examples
 

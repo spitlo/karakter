@@ -16,6 +16,7 @@ OBFUSCATION_HI="100"
 OBFUSCATION_CHANCE="$OBFUSCATION_MD"
 OBFUSCATION_FT="fairytale"
 OBFUSCATION_CP="cyberpunk"
+OBFUSCATION_LM="loudmouth"
 OBFUSCATION_STYLE="standard"
 SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 
@@ -30,9 +31,10 @@ There are three ways to supply input text to this script:
 ${BROWN}Options${NC}:
   [--lo|--md|--hi]    Level of obfuscation.
                       Defaults to 'md', medium.
-  [--ft|--cp]         Obfuscation style, fairytale
-                      or cyberpunk. If unset, defaults
-                      to a kitchen sink mix of styles.
+  [--ft|--cp|--lm]    Obfuscation style: fairytale,
+                      cyberpunk or loudmouth. If unset, 
+                      defaults to a kitchen sink mix
+                      of styles.
 "
 HELP="
 ${BROWN}Usage examples${NC}:
@@ -103,10 +105,13 @@ for arg in "$@"; do
         OBFUSCATION_CHANCE="$OBFUSCATION_HI"
         ;;
     esac
-  elif [ "$arg" = "--cp" ] || [ "$arg" = "--ft" ]; then
+  elif [ "$arg" = "--cp" ] || [ "$arg" = "--ft" ] || [ "$arg" = "--lm" ]; then
     case "$arg" in
       "--cp")
         OBFUSCATION_STYLE="$OBFUSCATION_CP"
+        ;;
+      "--lm")
+        OBFUSCATION_STYLE="$OBFUSCATION_LM"
         ;;
       *)
         OBFUSCATION_STYLE="$OBFUSCATION_FT"
@@ -134,6 +139,10 @@ case "$OBFUSCATION_STYLE" in
   "fairytale")
     # shellcheck source=/dev/null
     source "$SETS_DIR/fairytale.set"
+    ;;
+  "loudmouth")
+    # shellcheck source=/dev/null
+    source "$SETS_DIR/loudmouth.set"
     ;;
   *)
     # shellcheck source=/dev/null
