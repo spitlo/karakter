@@ -130,7 +130,7 @@ function build_v() {
 function build_zig() {
   echo -e "Building ${BLUE}zig${NC} version"
   if exists zig; then
-    cd zig && zig build && mv zig-cache/bin/karakter . && cd ..
+    cd zig && zig build && mv zig-out/bin/karakter . && cd ..
   else
     echo -e "${RED}Error:${NC}"
     echo -e "You seem to be missing ${BLUE}zig${NC}."
