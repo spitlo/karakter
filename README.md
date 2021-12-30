@@ -66,6 +66,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [ ] [Fortran](https://fortran-lang.org/)
 - [ ] [Nim](https://nim-lang.org/)
 - [ ] [OCaml](https://ocaml.org/)
+- [ ] [Reason](https://reasonml.github.io/en/)
 - [ ] [Red](https://www.red-lang.org/)
 - [ ] [Rust](https://www.rust-lang.org/)
 - [x] [V](https://vlang.io/)
