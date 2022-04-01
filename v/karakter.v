@@ -30,7 +30,7 @@ fn main() {
 	fp.skip_executable()
 
 	obfuscation := fp.string('obfuscation', `o`, '', 'Level of obfuscation, "lo" or "hi". Defaults to medium.')
-	style := fp.string('style', `s`, '', 'Obfuscation style, "ft" for fairytale, "cp" for cyberpunk or "lm" for loudmouth. Defaults to a kitchen sink mix of styles.')
+	style := fp.string('style', `s`, '', 'Obfuscation style, "ft" for fairytale, "cp" for cyberpunk, "lm" for loudmouth or "mt" for moneytalk. Defaults to a kitchen sink mix of styles.')
 	// Check if this is a pipe. If it is, we don’t require additional args.
 	// If not, assume (but confirm) that the argument is a file.
 	// If it’s not a file, take it as input.
@@ -66,6 +66,7 @@ fn main() {
 			'cp' { sets.cyberpunk }
 			'ft' { sets.fairytale }
 			'lm' { sets.loudmouth }
+			'mt' { sets.moneytalk }
 			else { sets.standard }
 		}
 	}
