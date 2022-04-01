@@ -2,7 +2,7 @@
 
 Ađď а 1itł1e ¢ћаѓacțeѓ łф your țe×ł 6џ șuъstїłułiη9 ▼їșua11y șїmїlar 91ypђs fг●m ṫђe 9ѓeek or ¢yrїl1ї¢ аlphaБёt fоr 1ёłteгș `a-z` aηď `A-Z`. A1șф 9lџpђș from tћe 1ątin a1phαъet wїṫђ ▼ișua1ly p1easїη9 dїa¢rїtї¢ș, anđ sоmё sψmbф1s.
 
-Most glyphs are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of "All the characters that work on most terminals". The set "Moneybags" consists of different currency symbols and are not guaranteed to work everywhere.
+Most glyphs are chosen from [this list](https://github.com/ehmicky/cross-platform-terminal-characters) of "All the characters that work on most terminals". The set "Moneybags" consists of different currency symbols and is not guaranteed to work everywhere.
 
 At the moment, there are two working versions: one written in Bash and one written in V. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
 
@@ -56,6 +56,11 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 
 ```txt
 ĪṪ ШĀȘ ṪHĒ ḂĒȘṪ ŌF ṪIMĒȘ, IṪ ШĀȘ ṪHĒ ШŌŔȘṪ ŌF ṪIMĒȘ, IṪ ШĀȘ ṪHĒ ĀGĒ ŌF ШIȘĐŌM, IṪ ШĀȘ ṪHĒ ĀGĒ ŌF FŌŌLIȘHПĒȘȘ, IṪ ШĀȘ ṪHĒ ĒРŌČH ŌF ḂĒLIĒF, IṪ ШĀȘ ṪHĒ ĒРŌČH ŌF IПČŔĒĐŪLIṪЏ, IṪ ШĀȘ ṪHĒ ȘĒĀȘŌП ŌF LIGHṪ, IṪ ШĀȘ ṪHĒ ȘĒĀȘŌП ŌF ĐĀŔЌПĒȘȘ, IṪ ШĀȘ ṪHĒ ȘРŔIПG ŌF HŌРĒ, IṪ ШĀȘ ṪHĒ ШIПṪĒŔ ŌF ĐĒȘРĀIŔ, ШĒ HĀĐ ĒVĒŔЏṪHIПG ḂĒFŌŔĒ ŪȘ, ШĒ HĀĐ ПŌṪHIПG ḂĒFŌŔĒ ŪȘ, ШĒ ШĒŔĒ ĀLL GŌIПG ĐIŔĒČṪ ṪŌ ĦĒĀVĒП, ШĒ ШĒŔĒ ĀLL GŌIПG ĐIŔĒČṪ ṪHĒ ŌṪHĒŔ ШĀЏ – IП ȘHŌŔṪ, ṪHĒ РĒŔIŌĐ ШĀȘ ȘŌ FĀŔ LIЌĒ ṪHĒ РŔĒȘĒПṪ РĒŔIŌĐ, ṪHĀṪ ȘŌMĒ ŌF IṪȘ ПŌIȘIĒȘṪ ĀŪṪHŌŔIṪIĒȘ IПȘIȘṪĒĐ ŌП IṪȘ ḂĒIПG ŔĒČĒIVĒĐ, FŌŔ GŌŌĐ ŌŔ FŌŔ ĒVIL, IП ṪHĒ ȘŪРĒŔLĀṪIVĒ ĐĒGŔĒĒ ŌF ČŌMРĀŔIȘŌП ŌПLЏ. 
+```
+
+### Output text, obfuscation level high, moneytalk style
+```txt
+1₮ ₩₳$ ₺₶€ ฿€$₸ 0₣ ₮1₥€₷, 1₸ ₩₳$ ₺₶€ ₩0₹₷₺ 0₣ ₸1₥€$, 1₺ ₩₳$ ₸₶€ ₳₲€ 0₣ ₩1$₫0₥, 1₺ ₩₳$ ₺₶€ ₳₲€ 0₣ ₣00£1₷₶₪€₷$, 1₮ ₩₳$ ₸₶€ €₱0₵₶ 0₣ ৳€£1€₣, 1₸ ₩₳$ ₺₶€ €₱0₵₶ 0₣ 1₪₵₹€₫U£1₮¥, 1₺ ₩₳$ ₮₶€ ₷€₳₷0₪ 0₣ £1₲₶₸, 1₮ ₩₳₷ ₸₶€ ₷€₳₷0₪ 0₣ ₫₳₹₭₪€$$, 1₮ ₩₳$ ₮₶€ $₽₹1₦₲ 0₣ ₶0₱€, 1₮ ₩₳$ ₸₶€ ₩1₦₸€₹ 0₣ ₫€$₱₳1₹, ₩€ ₶₳₫ €V€₹¥₸₶1₦₲ ฿€₣0₹€ U$, ₩€ ₶₳₫ ₪0₺₶1₦₲ ৳€₣0₹€ U$, ₩€ ₩€₹€ ₳££ ₲01₪₲ ₫1₹€₵₺ ₸0 ₶€₳V€₦, ₩€ ₩€₹€ ₳££ ₲01₪₲ ₫1₹€₡₸ ₮₶€ 0₸₶€₹ ₩₳¥ – 1₪ $₶0₹₸, ₸₶€ ₽€₹10₫ ₩₳₷ ₷0 ₣₳₹ £1₭€ ₺₶€ ₽₹€₷€₪₮ ₱€₹10₫, ₸₳₮ $0₥€ 0₣ 1₸$ ₦01$1€$₮ ₳U₸₶0₹1₸1€$ 1₦₷1$₮€₫ 0₦ 1₸₷ ৳€1₦₲ ₹€₵€1V€₫, ₣0₹ ₲00₫ 0₹ ₣0₹ €V1£, 1₪ ₮₶€ ₷U₽€₹£₳₸1V€ ₫€₲₹€€ 0₣ ₡0₥₱₳₹1$0₦ 0₪£¥.
 ```
 
 ## Languages
