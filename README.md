@@ -66,6 +66,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 ## Languages
 
 - [ ] [Ada](https://www.adaic.org/)
+- [ ] [Awk/Gawk](https://www.gnu.org/software/gawk/manual/gawk.html)
 - [x] [Bash](https://www.gnu.org/software/bash/)
 - [ ] [Dart](https://dart.dev/)
 - [ ] [Fortran](https://fortran-lang.org/)
