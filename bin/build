@@ -27,22 +27,6 @@ ${BROWN}Options${NC}:
   --list, -l      Show a list of commands we can update.
 "
 
-# os="linux"
-# if [[ "$OSTYPE" =~ ^darwin ]]; then
-#   cpu=$(uname -p)
-#   if [[ "$cpu" = "i386" ]]; then
-#     os="macos"
-#   else
-#     os="macos-arm"
-#   fi
-# elif [[ "$OSTYPE" = "linux-android" ]]; then
-#   os="termux"
-# elif [[ "$OSTYPE" = "linux-gnueabihf" ]]; then
-#   os="raspberry"
-# fi
-
-mkdir -p ~/tmp
-
 # --------------------------------
 #    __  ____  _ ___ __           ____                 __  _
 #   / / / / /_(_) (_) /___  __   / __/_  ______  _____/ /_(_)___  ____  _____
