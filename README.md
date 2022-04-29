@@ -77,6 +77,7 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 - [ ] [Red](https://www.red-lang.org/)
 - [ ] [Rust](https://www.rust-lang.org/)
 - [x] [V](https://vlang.io/)
+- [ ] [Vale](https://vale.dev/)
 - [ ] [Zig](https://ziglang.org/)
 
 ## Todo
