@@ -50,7 +50,7 @@ pub const moneytalk = {
   `u`: 'U'
   `v`: 'V'
   `w`: '₩'
-  `x`: 'X'
+  `x`: '×'
   `y`: '¥'
   `z`: '₴'
 }
