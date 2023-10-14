@@ -13,6 +13,20 @@ sets=(
   "standard" \
 )
 
+function generate_nature_set() {
+  source "./bash/sets/$1.set"
+  file="./nature/sets/$1.n"
+  cat << EOF > "$file"
+{string: string} $1 = {
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # A: "ΔΛА▲4",
+    echo "  '$character': '$substitutes'," >> "$file"
+  done
+  echo "}" >> "$file"
+}
+
 function generate_nim_set() {
   source "./bash/sets/$1.set"
   file="./nim/src/karakter/sets/$1.nim"
@@ -62,6 +76,7 @@ EOF
 }
 
 for set in "${sets[@]}"; do
+  generate_nature_set "$set"
   generate_nim_set "$set"
   generate_v_set "$set"
   generate_zig_set "$set"
