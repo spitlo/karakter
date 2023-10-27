@@ -30,7 +30,7 @@ fn main() {
 	fp.skip_executable()
 
 	obfuscation := fp.string('obfuscation', `o`, '', 'Level of obfuscation, "lo" or "hi". Defaults to medium.')
-	style := fp.string('style', `s`, '', 'Obfuscation style, "ft" for fairytale, "cp" for cyberpunk, "lm" for loudmouth or "mt" for moneytalk. Defaults to a kitchen sink mix of styles.')
+	style := fp.string('style', `s`, '', 'Obfuscation style, "ft" for fairytale, "cp" for cyberpunk, "lm" for loudmouth or "mt" for moneytalk, "ns" for numbers. Defaults to a kitchen sink mix of styles.')
 	// Check if this is a pipe. If it is, we don’t require additional args.
 	// If not, assume (but confirm) that the argument is a file.
 	// If it’s not a file, take it as input.
@@ -67,6 +67,7 @@ fn main() {
 			'ft' { sets.fairytale }
 			'lm' { sets.loudmouth }
 			'mt' { sets.moneytalk }
+			'ns' { sets.numbers }
 			else { sets.standard }
 		}
 	}
@@ -92,11 +93,11 @@ fn handle_line(line string, settings Settings) string {
 fn handle_character(character rune, settings Settings) rune {
 	handled_character := match character {
 		`A`...`z` {
-			if rand.intn(100) < settings.obfuscation_level {
+			if rand.intn(100) or {} < settings.obfuscation_level {
 				chars := settings.set[character]
 				if chars.len > 0 {
 					runes := chars.runes()
-					rnd_index := rand.intn(runes.len)
+					rnd_index := rand.intn(runes.len) or { 0 }
 					runes[rnd_index]
 				} else {
 					character

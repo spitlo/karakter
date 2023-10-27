@@ -18,6 +18,7 @@ OBFUSCATION_FT="fairytale"
 OBFUSCATION_CP="cyberpunk"
 OBFUSCATION_LM="loudmouth"
 OBFUSCATION_MT="moneytalk"
+OBFUSCATION_NS="numbers"
 OBFUSCATION_STYLE="standard"
 SETS_DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )/sets" && pwd )
 
@@ -32,8 +33,9 @@ There are three ways to supply input text to this script:
 ${BROWN}Options${NC}:
   [--lo|--md|--hi]    Level of obfuscation.
                       Defaults to 'md', medium.
-  [--{ft|cp|lm|mt}]   Obfuscation style: fairytale,
-                      cyberpunk, loudmouth or moneytalk.
+  [--{ft|cp|lm|mt|ns}]   Obfuscation style: fairytale,
+                      cyberpunk, loudmouth, moneytalk
+                      or numbers.
                       If unset, defaults to a kitchen
                       sink mix of styles.
 "
@@ -106,7 +108,7 @@ for arg in "$@"; do
         OBFUSCATION_CHANCE="$OBFUSCATION_HI"
         ;;
     esac
-  elif [ "$arg" = "--cp" ] || [ "$arg" = "--ft" ] || [ "$arg" = "--lm" ] || [ "$arg" = "--mt" ]; then
+  elif [ "$arg" = "--cp" ] || [ "$arg" = "--ft" ] || [ "$arg" = "--lm" ] || [ "$arg" = "--mt" ] || [ "$arg" = "--ns" ]; then
     case "$arg" in
       "--cp")
         OBFUSCATION_STYLE="$OBFUSCATION_CP"
@@ -116,6 +118,9 @@ for arg in "$@"; do
         ;;
       "--mt")
         OBFUSCATION_STYLE="$OBFUSCATION_MT"
+        ;;
+      "--ns")
+        OBFUSCATION_STYLE="$OBFUSCATION_NS"
         ;;
       *)
         OBFUSCATION_STYLE="$OBFUSCATION_FT"
@@ -148,6 +153,10 @@ case "$OBFUSCATION_STYLE" in
   "moneytalk")
     # shellcheck source=/dev/null
     source "$SETS_DIR/moneytalk.set"
+    ;;
+  "numbers")
+    # shellcheck source=/dev/null
+    source "$SETS_DIR/numbers.set"
     ;;
   *)
     # shellcheck source=/dev/null

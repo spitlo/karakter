@@ -6,6 +6,20 @@ Most glyphs are chosen from [this list](https://github.com/ehmicky/cross-platfor
 
 At the moment, there are two working versions: one written in Bash and one written in V. My ~~plan was~~ hope is to rewrite it in a few different languages that I’ve been wanting to try out.
 
+## Usage examples
+
+Generate a mildly elvish version of your name for an email signature using the Bash version:
+
+```bash
+bash/karakter --md --ft John Doe
+```
+
+Turn A Tale of Two Cities into a cyberpunk novel using the V version and read it comfortably in your terminal:
+
+```bash
+curl https://www.gutenberg.org/files/98/98-0.txt | sed 's/one thousand seven/two thousand seven/g' | tr a-z A-Z | v/karakter -o md -s cp | less
+```
+
 ## Building
 
 To build the `karakter` binaries, you need to install the corresponding languages.
@@ -59,8 +73,14 @@ It ш@s the bєsŁ of tim≡$, it w@s tHe шоrst of Łim≡$, it шas ŁH≡ а
 ```
 
 ### Output text, obfuscation level high, moneytalk style
+
 ```txt
 1₮ ₩₳$ ₺₶€ ฿€$₸ 0₣ ₮1₥€₷, 1₸ ₩₳$ ₺₶€ ₩0₹₷₺ 0₣ ₸1₥€$, 1₺ ₩₳$ ₸₶€ ₳₲€ 0₣ ₩1$₫0₥, 1₺ ₩₳$ ₺₶€ ₳₲€ 0₣ ₣00£1₷₶₪€₷$, 1₮ ₩₳$ ₸₶€ €₱0₵₶ 0₣ ৳€£1€₣, 1₸ ₩₳$ ₺₶€ €₱0₵₶ 0₣ 1₪₵₹€₫U£1₮¥, 1₺ ₩₳$ ₮₶€ ₷€₳₷0₪ 0₣ £1₲₶₸, 1₮ ₩₳₷ ₸₶€ ₷€₳₷0₪ 0₣ ₫₳₹₭₪€$$, 1₮ ₩₳$ ₮₶€ $₽₹1₦₲ 0₣ ₶0₱€, 1₮ ₩₳$ ₸₶€ ₩1₦₸€₹ 0₣ ₫€$₱₳1₹, ₩€ ₶₳₫ €V€₹¥₸₶1₦₲ ฿€₣0₹€ U$, ₩€ ₶₳₫ ₪0₺₶1₦₲ ৳€₣0₹€ U$, ₩€ ₩€₹€ ₳££ ₲01₪₲ ₫1₹€₵₺ ₸0 ₶€₳V€₦, ₩€ ₩€₹€ ₳££ ₲01₪₲ ₫1₹€₡₸ ₮₶€ 0₸₶€₹ ₩₳¥ – 1₪ $₶0₹₸, ₸₶€ ₽€₹10₫ ₩₳₷ ₷0 ₣₳₹ £1₭€ ₺₶€ ₽₹€₷€₪₮ ₱€₹10₫, ₸₳₮ $0₥€ 0₣ 1₸$ ₦01$1€$₮ ₳U₸₶0₹1₸1€$ 1₦₷1$₮€₫ 0₦ 1₸₷ ৳€1₦₲ ₹€₵€1V€₫, ₣0₹ ₲00₫ 0₹ ₣0₹ €V1£, 1₪ ₮₶€ ₷U₽€₹£₳₸1V€ ₫€₲₹€€ 0₣ ₡0₥₱₳₹1$0₦ 0₪£¥.
+```
+
+### Output text, obfuscation level medium, numbers style
+```txt
+It w4s th3 b35t 0f 71m35, 17 wa5 7he w0rst 0f time5, 1t w45 the 4ge of w1sdom, 17 wa5 7he 463 of f0olishness, 1t wa5 the 3poch 0f 83li3f, it w4s 7h3 3poch of incredulity, i7 w45 th3 s3450n of L1gh7, 1t w4s 7he s3450n 0f D4rkne55, i7 was 7he 5pring of hop3, i7 wa5 7h3 wint3r of desp4ir, w3 had 3very7h1n6 bef0re u5, we h4d noth1n6 8ef0r3 us, w3 w3r3 all g01ng direct t0 H34v3n, we w3re all 6o1n6 d1r3c7 7h3 0ther w4y – 1n 5h0rt, 7h3 per10d wa5 5o f4r l1ke the pre53nt per10d, 7h47 5om3 0f 1t5 n0i5ie5t 4uth0ri7ies 1nsis7ed 0n 175 8e1n6 r3ce1ved, for g00d 0r for 3v1l, 1n the sup3rl4tiv3 degre3 of comp4r15on only.
 ```
 
 ## Languages
