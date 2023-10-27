@@ -90,7 +90,7 @@ It w4s th3 b35t 0f 71m35, 17 wa5 7he w0rst 0f time5, 1t w45 the 4ge of w1sdom, 1
 - [x] [Bash](https://www.gnu.org/software/bash/)
 - [ ] [Dart](https://dart.dev/)
 - [ ] [Fortran](https://fortran-lang.org/)
-- [ ] [Nim](https://nim-lang.org/)
+- [ ] [Nim](https://nim-lang.org/) *WI"P"*
 - [ ] [OCaml](https://ocaml.org/)
 - [ ] [Odin](https://odin-lang.org/)
 - [ ] [Reason](https://reasonml.github.io/en/)
@@ -98,7 +98,7 @@ It w4s th3 b35t 0f 71m35, 17 wa5 7he w0rst 0f time5, 1t w45 the 4ge of w1sdom, 1
 - [ ] [Rust](https://www.rust-lang.org/)
 - [x] [V](https://vlang.io/)
 - [ ] [Vale](https://vale.dev/)
-- [ ] [Zig](https://ziglang.org/)
+- [ ] [Zig](https://ziglang.org/) *WI"P"*
 
 ## Todo
 
