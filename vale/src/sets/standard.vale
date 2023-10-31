@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func standard(inp str) str {
+  standard = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  standard.add("A", "ĄΑΔΛЉАд▲");
+  standard.add("B", "8");
+  standard.add("C", "©");
+  standard.add("D", "ĎĐ");
+  standard.add("E", "єξΣΞ3€");
+  standard.add("F", "");
+  standard.add("G", "");
+  standard.add("H", "њнЂ");
+  standard.add("I", "Ϊ1");
+  standard.add("J", "");
+  standard.add("K", "ќк");
+  standard.add("L", "");
+  standard.add("M", "м");
+  standard.add("N", "ѝйи");
+  standard.add("O", "фθ0");
+  standard.add("P", "");
+  standard.add("Q", "");
+  standard.add("R", "яŔ®");
+  standard.add("S", "Ș5");
+  standard.add("T", "┬†ṪтȚŤ");
+  standard.add("U", "");
+  standard.add("V", "");
+  standard.add("W", "Ŵ");
+  standard.add("X", "χ");
+  standard.add("Y", "Ų¥");
+  standard.add("Z", "");
+  standard.add("a", "ąάαаą@ª");
+  standard.add("b", "ъьвБ6");
+  standard.add("c", "¢");
+  standard.add("d", "đď");
+  standard.add("e", "єё");
+  standard.add("f", "");
+  standard.add("g", "9");
+  standard.add("h", "ћђ");
+  standard.add("i", "ї");
+  standard.add("j", "");
+  standard.add("k", "");
+  standard.add("l", "1");
+  standard.add("m", "");
+  standard.add("n", "η");
+  standard.add("o", "фоº●");
+  standard.add("p", "");
+  standard.add("q", "");
+  standard.add("r", "ѓг");
+  standard.add("s", "ș");
+  standard.add("t", "ṫțł");
+  standard.add("u", "");
+  standard.add("v", "▼");
+  standard.add("w", "шώŵ");
+  standard.add("x", "ж×");
+  standard.add("y", "џψ");
+  standard.add("z", "");
+
+  char = standard.get(inp);
+  subst = (char).get();
+
+  return subst;
+}

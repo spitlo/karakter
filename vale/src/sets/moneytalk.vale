@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func moneytalk(inp str) str {
+  moneytalk = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  moneytalk.add("A", "₳");
+  moneytalk.add("B", "฿৳");
+  moneytalk.add("C", "₵₡");
+  moneytalk.add("D", "₫");
+  moneytalk.add("E", "€");
+  moneytalk.add("F", "₣");
+  moneytalk.add("G", "₲");
+  moneytalk.add("H", "₶");
+  moneytalk.add("I", "1");
+  moneytalk.add("J", "J");
+  moneytalk.add("K", "₭");
+  moneytalk.add("L", "£");
+  moneytalk.add("M", "₥");
+  moneytalk.add("N", "₦₪");
+  moneytalk.add("O", "0");
+  moneytalk.add("P", "₽₱");
+  moneytalk.add("Q", "Q");
+  moneytalk.add("R", "₹");
+  moneytalk.add("S", "₷$");
+  moneytalk.add("T", "₸₮₺");
+  moneytalk.add("U", "U");
+  moneytalk.add("V", "V");
+  moneytalk.add("W", "₩");
+  moneytalk.add("X", "X");
+  moneytalk.add("Y", "¥");
+  moneytalk.add("Z", "₴");
+  moneytalk.add("a", "₳");
+  moneytalk.add("b", "฿৳");
+  moneytalk.add("c", "₵₡");
+  moneytalk.add("d", "₫");
+  moneytalk.add("e", "€");
+  moneytalk.add("f", "₣");
+  moneytalk.add("g", "₲");
+  moneytalk.add("h", "₶");
+  moneytalk.add("i", "1");
+  moneytalk.add("j", "J");
+  moneytalk.add("k", "₭");
+  moneytalk.add("l", "£");
+  moneytalk.add("m", "₥");
+  moneytalk.add("n", "₦₪");
+  moneytalk.add("o", "0");
+  moneytalk.add("p", "₽₱");
+  moneytalk.add("q", "Q");
+  moneytalk.add("r", "₹");
+  moneytalk.add("s", "₷$");
+  moneytalk.add("t", "₸₮₺");
+  moneytalk.add("u", "U");
+  moneytalk.add("v", "V");
+  moneytalk.add("w", "₩");
+  moneytalk.add("x", "×");
+  moneytalk.add("y", "¥");
+  moneytalk.add("z", "₴");
+
+  char = moneytalk.get(inp);
+  subst = (char).get();
+
+  return subst;
+}

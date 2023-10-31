@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func fairytale(inp str) str {
+  fairytale = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  fairytale.add("A", "ĄΑЉАдΆ");
+  fairytale.add("B", "βḂ");
+  fairytale.add("C", "ĊÇ");
+  fairytale.add("D", "ĎĐ");
+  fairytale.add("E", "єξΣЄ");
+  fairytale.add("F", "Ḟ");
+  fairytale.add("G", "Ģ");
+  fairytale.add("H", "њнЂ");
+  fairytale.add("I", "Ϊ");
+  fairytale.add("J", "⌡");
+  fairytale.add("K", "ќ");
+  fairytale.add("L", "ĹĻĽ");
+  fairytale.add("M", "Ṁ");
+  fairytale.add("N", "ѝйŅ");
+  fairytale.add("O", "фθΌ");
+  fairytale.add("P", "þ");
+  fairytale.add("Q", "");
+  fairytale.add("R", "Ŕ");
+  fairytale.add("S", "Ș");
+  fairytale.add("T", "┬†ṪтȚŤ");
+  fairytale.add("U", "Ů");
+  fairytale.add("V", "");
+  fairytale.add("W", "Ŵ");
+  fairytale.add("X", "χЖ");
+  fairytale.add("Y", "Ų¥Ϋψ");
+  fairytale.add("Z", "");
+  fairytale.add("a", "ąάαą");
+  fairytale.add("b", "вБḃ");
+  fairytale.add("c", "¢ς");
+  fairytale.add("d", "đďδḋ");
+  fairytale.add("e", "єёē");
+  fairytale.add("f", "ḟƒ");
+  fairytale.add("g", "ġ");
+  fairytale.add("h", "ћђ");
+  fairytale.add("i", "їΐ");
+  fairytale.add("j", "");
+  fairytale.add("k", "");
+  fairytale.add("l", "ļľ");
+  fairytale.add("m", "ṁ");
+  fairytale.add("n", "ηñņ");
+  fairytale.add("o", "фоºσ");
+  fairytale.add("p", "");
+  fairytale.add("q", "");
+  fairytale.add("r", "ѓг");
+  fairytale.add("s", "ș");
+  fairytale.add("t", "ṫțł");
+  fairytale.add("u", "ΰυ");
+  fairytale.add("v", "ν");
+  fairytale.add("w", "шώŵ");
+  fairytale.add("x", "ж");
+  fairytale.add("y", "џψ");
+  fairytale.add("z", "ż");
+
+  char = fairytale.get(inp);
+  subst = (char).get();
+
+  return subst;
+}

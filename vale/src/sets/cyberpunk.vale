@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func cyberpunk(inp str) str {
+  cyberpunk = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  cyberpunk.add("A", "ΔΛА▲4");
+  cyberpunk.add("B", "8");
+  cyberpunk.add("C", "©");
+  cyberpunk.add("D", "Đ");
+  cyberpunk.add("E", "єΣΞ3€");
+  cyberpunk.add("F", "");
+  cyberpunk.add("G", "");
+  cyberpunk.add("H", "н");
+  cyberpunk.add("I", "1Ī┃");
+  cyberpunk.add("J", "⌡");
+  cyberpunk.add("K", "к");
+  cyberpunk.add("L", "Ľ┕┖");
+  cyberpunk.add("M", "м");
+  cyberpunk.add("N", "и");
+  cyberpunk.add("O", "θ0Ø⓪█");
+  cyberpunk.add("P", "");
+  cyberpunk.add("Q", "?");
+  cyberpunk.add("R", "Я®");
+  cyberpunk.add("S", "5$§");
+  cyberpunk.add("T", "┬†тȚ7");
+  cyberpunk.add("U", "");
+  cyberpunk.add("V", "√");
+  cyberpunk.add("W", "Ш");
+  cyberpunk.add("X", "χ");
+  cyberpunk.add("Y", "Ч");
+  cyberpunk.add("Z", "");
+  cyberpunk.add("a", "αа@");
+  cyberpunk.add("b", "вБ6");
+  cyberpunk.add("c", "¢");
+  cyberpunk.add("d", "ď");
+  cyberpunk.add("e", "є≡");
+  cyberpunk.add("f", "⌠");
+  cyberpunk.add("g", "9");
+  cyberpunk.add("h", "H");
+  cyberpunk.add("i", ":īı¡");
+  cyberpunk.add("j", "");
+  cyberpunk.add("k", "κ");
+  cyberpunk.add("l", "1");
+  cyberpunk.add("m", "");
+  cyberpunk.add("n", "Π∩π");
+  cyberpunk.add("o", "о●ø■");
+  cyberpunk.add("p", "");
+  cyberpunk.add("q", "");
+  cyberpunk.add("r", "гя┍┎");
+  cyberpunk.add("s", "$");
+  cyberpunk.add("t", "Ł┪");
+  cyberpunk.add("u", "μ");
+  cyberpunk.add("v", "▼");
+  cyberpunk.add("w", "ш");
+  cyberpunk.add("x", "×");
+  cyberpunk.add("y", "џч");
+  cyberpunk.add("z", "");
+
+  char = cyberpunk.get(inp);
+  subst = (char).get();
+
+  return subst;
+}

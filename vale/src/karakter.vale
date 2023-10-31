@@ -1,0 +1,11 @@
+import stdlib.*;
+
+import karakter.sets.*;
+
+exported func main() {
+  lmSub = loudmouth("A");
+  ftSub = loudmouth("K");
+
+  println(lmSub);
+  println(ftSub);
+}

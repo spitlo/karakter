@@ -12,6 +12,7 @@ RED='\033[0;31m'
 COMMANDS="
   nim
   v
+  vale
   zig
 "
 COMMANDS="$(echo "$COMMANDS" | tr ' ' '\n' | sort -u | xargs)"
@@ -100,6 +101,7 @@ function build_nim() {
   fi
 }
 
+
 function build_v() {
   echo -e "Building ${BLUE}v${NC} version"
   if exists v; then
@@ -108,6 +110,18 @@ function build_v() {
     echo -e "${RED}Error:${NC}"
     echo -e "You seem to be missing ${BLUE}v${NC}."
     echo -e "Install it from:\nhttps://vlang.io/"
+  fi
+}
+
+function build_vale() {
+  echo -e "Building ${BLUE}vale${NC} version"
+  if exists valec; then
+    # valec karakter=./vale/src
+    ~/etc/Vale/valec build --output_dir ./vale/build karakter=./vale/src -o karakter && mv ./vale/build/karakter ./vale/
+  else
+    echo -e "${RED}Error:${NC}"
+    echo -e "You seem to be missing ${BLUE}vale${NC}."
+    echo -e "Install it from:\nhttps://vale.dev/"
   fi
 }
 

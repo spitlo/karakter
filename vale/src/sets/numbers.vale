@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func numbers(inp str) str {
+  numbers = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  numbers.add("A", "4");
+  numbers.add("B", "8");
+  numbers.add("C", "");
+  numbers.add("D", "");
+  numbers.add("E", "3");
+  numbers.add("F", "");
+  numbers.add("G", "6");
+  numbers.add("H", "");
+  numbers.add("I", "1");
+  numbers.add("J", "");
+  numbers.add("K", "");
+  numbers.add("L", "");
+  numbers.add("M", "");
+  numbers.add("N", "");
+  numbers.add("O", "0");
+  numbers.add("P", "");
+  numbers.add("Q", "");
+  numbers.add("R", "");
+  numbers.add("S", "5");
+  numbers.add("T", "7");
+  numbers.add("U", "");
+  numbers.add("V", "");
+  numbers.add("W", "");
+  numbers.add("X", "✕");
+  numbers.add("Y", "");
+  numbers.add("Z", "2");
+  numbers.add("a", "4");
+  numbers.add("b", "8");
+  numbers.add("c", "");
+  numbers.add("d", "");
+  numbers.add("e", "3");
+  numbers.add("f", "");
+  numbers.add("g", "6");
+  numbers.add("h", "");
+  numbers.add("i", "1");
+  numbers.add("j", "");
+  numbers.add("k", "");
+  numbers.add("l", "");
+  numbers.add("m", "");
+  numbers.add("n", "");
+  numbers.add("o", "0");
+  numbers.add("p", "");
+  numbers.add("q", "");
+  numbers.add("r", "");
+  numbers.add("s", "5");
+  numbers.add("t", "7");
+  numbers.add("u", "");
+  numbers.add("v", "");
+  numbers.add("w", "");
+  numbers.add("x", "✕");
+  numbers.add("y", "");
+  numbers.add("z", "2");
+
+  char = numbers.get(inp);
+  subst = (char).get();
+
+  return subst;
+}

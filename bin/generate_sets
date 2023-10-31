@@ -46,6 +46,31 @@ EOF
   echo "}" >> "$file"
 }
 
+function generate_vale_set() {
+  source "./bash/sets/$1.set"
+  file="./vale/src/sets/$1.vale"
+  cat << EOF > "$file"
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func $1(inp str) str {
+  $1 = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # <SetName>.add("A", "ĄΑΔΛЉАд▲");
+    echo "  ${1}.add(\"${character}\", \"${substitutes}\");" >> "$file"
+  done
+  echo "" >> "$file"
+  echo "  char = $1.get(inp);" >> "$file"
+  echo "  subst = (char).get();" >> "$file"
+  echo "" >> "$file"
+  echo "  return subst;" >> "$file"
+  echo "}" >> "$file"
+}
+
 function generate_zig_set() {
   source "./bash/sets/$1.set"
   file="./zig/src/sets/$1.zig"
@@ -65,5 +90,6 @@ EOF
 for set in "${sets[@]}"; do
   generate_nim_set "$set"
   generate_v_set "$set"
+  generate_vale_set "$set"
   generate_zig_set "$set"
 done

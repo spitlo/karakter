@@ -1,0 +1,65 @@
+import stdlib.stringutils.*;
+import stdlib.collections.hashmap.*;
+import stdlib.collections.hashset.*;
+
+exported func loudmouth(inp str) str {
+  loudmouth = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
+
+  loudmouth.add("A", "Ā");
+  loudmouth.add("B", "β");
+  loudmouth.add("C", "Č");
+  loudmouth.add("D", "Đ");
+  loudmouth.add("E", "Ē");
+  loudmouth.add("F", "Ḟ");
+  loudmouth.add("G", "");
+  loudmouth.add("H", "Ħ");
+  loudmouth.add("I", "Ī");
+  loudmouth.add("J", "");
+  loudmouth.add("K", "Ќ");
+  loudmouth.add("L", "");
+  loudmouth.add("M", "");
+  loudmouth.add("N", "П");
+  loudmouth.add("O", "ŌØΘ");
+  loudmouth.add("P", "РṖ");
+  loudmouth.add("Q", "");
+  loudmouth.add("R", "Ŕ");
+  loudmouth.add("S", "Ș");
+  loudmouth.add("T", "Ṫ");
+  loudmouth.add("U", "Ū");
+  loudmouth.add("V", "");
+  loudmouth.add("W", "Ш");
+  loudmouth.add("X", "");
+  loudmouth.add("Y", "Џ");
+  loudmouth.add("Z", "Ż");
+  loudmouth.add("a", "Ā");
+  loudmouth.add("b", "Ḃ");
+  loudmouth.add("c", "Č");
+  loudmouth.add("d", "Đ");
+  loudmouth.add("e", "Ē");
+  loudmouth.add("f", "F");
+  loudmouth.add("g", "G");
+  loudmouth.add("h", "H");
+  loudmouth.add("i", "I");
+  loudmouth.add("j", "J");
+  loudmouth.add("k", "Ќ");
+  loudmouth.add("l", "L");
+  loudmouth.add("m", "M");
+  loudmouth.add("n", "П");
+  loudmouth.add("o", "Ō");
+  loudmouth.add("p", "Р");
+  loudmouth.add("q", "Q");
+  loudmouth.add("r", "Ŕ");
+  loudmouth.add("s", "Ș");
+  loudmouth.add("t", "Ṫ");
+  loudmouth.add("u", "Ū");
+  loudmouth.add("v", "V");
+  loudmouth.add("w", "Ш");
+  loudmouth.add("x", "X");
+  loudmouth.add("y", "Џ");
+  loudmouth.add("z", "Ż");
+
+  char = loudmouth.get(inp);
+  subst = (char).get();
+
+  return subst;
+}
