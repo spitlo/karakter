@@ -50,9 +50,12 @@ function generate_vale_set() {
   source "./bash/sets/$1.set"
   file="./vale/src/sets/$1.vale"
   cat << EOF > "$file"
+import stdlib.math.*;
 import stdlib.stringutils.*;
 import stdlib.collections.hashmap.*;
 import stdlib.collections.hashset.*;
+
+import karakter.random.*;
 
 exported func $1(inp str) str {
   $1 = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
@@ -63,12 +66,19 @@ EOF
     # <SetName>.add("A", "ĄΑΔΛЉАд▲");
     echo "  ${1}.add(\"${character}\", \"${substitutes}\");" >> "$file"
   done
-  echo "" >> "$file"
-  echo "  char = $1.get(inp);" >> "$file"
-  echo "  subst = (char).get();" >> "$file"
-  echo "" >> "$file"
-  echo "  return subst;" >> "$file"
-  echo "}" >> "$file"
+cat << EOF >> "$file"
+  char = $1.get(inp);
+  subst = (char).get();
+  subst_len = len(subst);
+
+  if subst_len > 0 {
+    subst_index = randomInt(0, subst_len - 1);
+    return slice(subst, subst_index, 1).str();
+  } else {
+    return inp;
+  }
+}
+EOF
 }
 
 function generate_zig_set() {

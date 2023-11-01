@@ -1,11 +1,21 @@
 import stdlib.*;
 
+import karakter.random.*;
+
 import karakter.sets.*;
 
 exported func main() {
-  lmSub = loudmouth("A");
-  ftSub = loudmouth("K");
+  randomize();
 
-  println(lmSub);
-  println(ftSub);
+  word = getMainArg(1);
+  if word.len() > 0 {
+    chars = word.split("");
+    foreach char in chars {
+      print(char);
+      print(" = ");
+      println(standard(char.str()));
+    }
+  } else {
+    println("Please provide input");
+  }
 }

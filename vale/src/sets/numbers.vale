@@ -1,6 +1,9 @@
+import stdlib.math.*;
 import stdlib.stringutils.*;
 import stdlib.collections.hashmap.*;
 import stdlib.collections.hashset.*;
+
+import karakter.random.*;
 
 exported func numbers(inp str) str {
   numbers = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
@@ -57,9 +60,14 @@ exported func numbers(inp str) str {
   numbers.add("x", "✕");
   numbers.add("y", "");
   numbers.add("z", "2");
-
   char = numbers.get(inp);
   subst = (char).get();
+  subst_len = len(subst);
 
-  return subst;
+  if subst_len > 0 {
+    subst_index = randomInt(0, subst_len - 1);
+    return slice(subst, subst_index, 1).str();
+  } else {
+    return inp;
+  }
 }

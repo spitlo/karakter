@@ -1,6 +1,9 @@
+import stdlib.math.*;
 import stdlib.stringutils.*;
 import stdlib.collections.hashmap.*;
 import stdlib.collections.hashset.*;
+
+import karakter.random.*;
 
 exported func loudmouth(inp str) str {
   loudmouth = HashMap<str, str, StrHasher, StrEquator>(StrHasher(), StrEquator());
@@ -57,9 +60,14 @@ exported func loudmouth(inp str) str {
   loudmouth.add("x", "X");
   loudmouth.add("y", "Џ");
   loudmouth.add("z", "Ż");
-
   char = loudmouth.get(inp);
   subst = (char).get();
+  subst_len = len(subst);
 
-  return subst;
+  if subst_len > 0 {
+    subst_index = randomInt(0, subst_len - 1);
+    return slice(subst, subst_index, 1).str();
+  } else {
+    return inp;
+  }
 }
