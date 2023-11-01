@@ -11,11 +11,11 @@ pub fn main() anyerror!void {
   std.log.info("The Zig version of karakter is a work in progress.", .{});
   const A = @field(cyberpunk.set, "A");
   const B = @field(fairytale.set, "B");
-  const B = @field(loudmouth.set, "C");
-  const B = @field(moneytalk.set, "D");
-  const B = @field(numbers.set, "E");
-  const C = @field(standard.set, "Z");
-  std.log.info("Examples:\n{s}\n{s}\n{s}\n", .{A, B, Z});
+  const C = @field(loudmouth.set, "C");
+  const D = @field(moneytalk.set, "D");
+  const E = @field(numbers.set, "E");
+  const F = @field(standard.set, "F");
+  std.log.info("Examples:\n{s}\n{s}\n{s}\n{s}\n{s}\n{s}\n", .{A, B, C, D, E, F});
 }
 
 test "basic test" {

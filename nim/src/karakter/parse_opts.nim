@@ -35,11 +35,10 @@ proc writeVersion() =
 proc generateHelpMessage(): string =
   const helpMessage = """
 Usage:
-  karakter [file]       Edit file
+  karakter [file]    Beautify file
 Arguments:
-  -R               Readonly mode
-  -h, --help       Print this help
-  -v, --version    Print version
+  -h, --help         Print this help
+  -v, --version      Print version
 """
 
   result = generateVersionInfoMessage() & "\n\n" & helpMessage
@@ -68,7 +67,6 @@ proc parseCommandLineOption*(line: seq[string]): CmdParsedList =
         case key:
           of "v": writeVersion()
           of "h": writeHelp()
-          of "R": result.isReadonly = true
           else: writeCmdLineError(kind, key)
       of cmdLongOption:
         case key:
