@@ -28,7 +28,7 @@ You can change the level of obfuscation by supplying the argument `--obfuscation
 
 ### Style
 
-If you’re not happy with the default style, you can supply argument `--style`, or `-s` for short. Possible values are `cp` for a somewhat `¢џБ≡┎pμ∩κ` look, `ft` for a more `ƒάїгψłάľє` one, `lm` for the `LŌŪĐMŌŪṪH` variety and finally `mt` for that `₥0₦€¥₸₳£₭` feeling.
+If you’re not happy with the default style, you can supply argument `--style`, or `-s` for short. Possible values are `cp` for a somewhat `¢џБ≡┎pμ∩κ` look, `ft` for a more `ƒάїгψłάľє` one, `lm` for the `LŌŪĐMŌŪṪH` variety, `mt` for that `₥0₦€¥₸₳£₭` feeling and finally `ns` for the `num83r5` style.
 
 ## Usage examples
 
