@@ -29,6 +29,21 @@ EOF
   done
   echo ")" >> "$file"
 }
+function generate_odin_set() {
+  source "./bash/sets/$1.set"
+  file="./odin/src/sets/$1.odin"
+  cat << EOF > "$file"
+package sets
+
+$1 := map[string]string {
+EOF
+  for character in {{A..Z},{a..z}}; do
+    substitutes="${!character}"
+    # A: "ΔΛА▲4",
+    echo "  \"$character\" = \"$substitutes\"," >> "$file"
+  done
+  echo "}" >> "$file"
+}
 
 function generate_v_set() {
   source "./bash/sets/$1.set"
@@ -99,6 +114,7 @@ EOF
 
 for set in "${sets[@]}"; do
   generate_nim_set "$set"
+  generate_odin_set "$set"
   generate_v_set "$set"
   generate_vale_set "$set"
   generate_zig_set "$set"

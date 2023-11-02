@@ -93,12 +93,12 @@ It w4s th3 b35t 0f 71m35, 17 wa5 7he w0rst 0f time5, 1t w45 the 4ge of w1sdom, 1
 - [ ] [Nature](https://nature-lang.org/)
 - [ ] [Nim](https://nim-lang.org/) (**WIP**)
 - [ ] [OCaml](https://ocaml.org/)
-- [ ] [Odin](https://odin-lang.org/)
+- [ ] [Odin](https://odin-lang.org/) (**WIP**)
 - [ ] [Reason](https://reasonml.github.io/en/)
 - [ ] [Red](https://www.red-lang.org/)
 - [ ] [Rust](https://www.rust-lang.org/)
 - [x] [V](https://vlang.io/)
-- [ ] [Vale](https://vale.dev/)
+- [ ] [Vale](https://vale.dev/) (**WIP**)
 - [ ] [Zig](https://ziglang.org/) (**WIP**)
 
 ## Todo

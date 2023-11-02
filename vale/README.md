@@ -2,7 +2,7 @@
 
 ## Building
 
-To build the `karakter` binary, you need to install [Vale](https://vale.dev). Then, from the root folder, run:
+To build the `karakter` binary, you need to install [Vale](https://vale.dev/). Then, from the root folder, run:
 
 ```bash
 bin/build vale
