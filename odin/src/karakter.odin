@@ -8,10 +8,12 @@ import "core:strings"
 import rl "vendor:raylib"
 
 import "shared:sets"
+import getopts "shared:getopts"
 
 // https://github.com/odin-lang/examples/blob/master/by_example/dir_info/main.odin
 // https://github.com/odin-lang/examples/blob/master/by_example/os_args/main.odin
 // https://github.com/odin-lang/examples/blob/master/by_example/strings/basic_string_example.odin
+// https://www.youtube.com/watch?v=0GGJBm0r3nA
 
 handle_alpha :: proc(char: string) -> string {
   substitutes := sets.cyberpunk[char]
@@ -44,15 +46,41 @@ handle_char :: proc(char: string) -> string {
 }
 
 main :: proc() {
-  args := os.args[1:]
+  opts := getopts.init_opts()
+  defer getopts.deinit_opts(&opts)
 
-  for line in args {
-    words := strings.split(line, " ")
-    for word in words {
-      chars := strings.split(word, "")
-      for char in chars {
-        fmt.print(handle_char(char))
-      }
+  getopts.add_arg(&opts, "o", getopts.optarg_opt.OPTIONAL_ARGUMENT, "obfuscation")
+  getopts.add_arg(&opts, "s", getopts.optarg_opt.OPTIONAL_ARGUMENT, "style")
+
+  getopts.getopt_long(os.args, &opts)
+
+  for opt in opts.opts {
+    if !opt.set do continue
+    switch opt.name {
+      case "o":
+        fmt.println(opt)
+      case "s":
+        fmt.println(opt)
+      case:
+        fmt.println("Failure")
+    }
+  }
+
+  input := ""
+
+  if len(opts.input) > 0 {
+    input = opts.input
+  } else {
+    // Exit for now, check for pipe or file later
+    os.exit(1)
+  }
+
+  lines := strings.split(input, "\n")
+
+  for line in lines {
+    chars := strings.split(line, "")
+    for char in chars {
+      fmt.print(handle_char(char))
     }
   }
 
