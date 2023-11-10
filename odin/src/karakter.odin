@@ -34,6 +34,7 @@ obfuscation_styles := map[string]string {
 
 obfuscation_amount: int
 obfuscation_style: string
+set: map[string]string
 
 set_obfuscation_amount :: proc(opt: getopts.Option) {
   if opt.set {
@@ -74,22 +75,6 @@ handle_alpha :: proc(char: string) -> string {
     return char
   }
 
-  // Perhaps do this once only in main?
-  set: map[string]string = ---
-  switch obfuscation_style {
-    case "cyberpunk":
-      set = sets.cyberpunk
-    case "fairytale":
-      set = sets.fairytale
-    case "loudmouth":
-      set = sets.loudmouth
-    case "moneytalk":
-      set = sets.moneytalk
-    case "numbers":
-      set = sets.numbers
-    case:
-      set = sets.standard
-  }
   substitutes := set[char]
   subs_array := strings.split(substitutes, "")
   subs_len := i32(len(subs_array))
@@ -133,10 +118,6 @@ main :: proc() {
 
   getopts.getopt_long(os.args, &opts)
 
-  fmt.printf("Obfuscation amount: %s \n", obfuscation_amount)
-  fmt.printf("Obfuscation style: %s \n", obfuscation_style)
-
-
   for opt in opts.opts {
     if !opt.set do continue
     switch opt.name {
@@ -147,6 +128,24 @@ main :: proc() {
       case:
         fmt.println("Failure")
     }
+  }
+
+  // fmt.printf("Obfuscation amount: %s \n", obfuscation_amount)
+  // fmt.printf("Obfuscation style: %s \n", obfuscation_style)
+
+  switch obfuscation_style {
+    case "cyberpunk":
+      set = sets.cyberpunk
+    case "fairytale":
+      set = sets.fairytale
+    case "loudmouth":
+      set = sets.loudmouth
+    case "moneytalk":
+      set = sets.moneytalk
+    case "numbers":
+      set = sets.numbers
+    case:
+      set = sets.standard
   }
 
   input := ""
