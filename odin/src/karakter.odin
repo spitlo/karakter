@@ -152,8 +152,14 @@ main :: proc() {
 
   if len(opts.input) > 0 {
     input = opts.input
+    // Check if input is a file
+    file_contents, ok := os.read_entire_file(input)
+    if ok {
+      // This is a file, read contents and put in input
+      input = string(file_contents)
+    }
   } else {
-    // Exit for now, check for pipe or file later
+    // Exit for now, check for pipe later
     os.exit(1)
   }
 
