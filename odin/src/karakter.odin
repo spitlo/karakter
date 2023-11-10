@@ -3,7 +3,6 @@ package main
 import "core:os"
 import "core:fmt"
 import "core:strings"
-// import "core:unicode/utf8"
 
 import rl "vendor:raylib"
 
@@ -113,14 +112,24 @@ main :: proc() {
   opts := getopts.init_opts()
   defer getopts.deinit_opts(&opts)
 
-  getopts.add_arg(&opts, "o", getopts.optarg_opt.OPTIONAL_ARGUMENT, "obfuscation")
-  getopts.add_arg(&opts, "s", getopts.optarg_opt.OPTIONAL_ARGUMENT, "style")
+  getopts.add_arg(&opts, "h", getopts.optarg_opt.NO_ARGUMENT, "help", "Shows help and exits")
+  getopts.add_arg(&opts, "o", getopts.optarg_opt.REQUIRED_ARGUMENT, "obfuscation", "Sets obfuscation level")
+  getopts.add_arg(&opts, "s", getopts.optarg_opt.REQUIRED_ARGUMENT, "style", "Sets obfuscation style")
+
+  // If no arguments are provided, show help and quit
+  if len(os.args) == 1 {
+    show_help(opts)
+    os.exit(0)
+  }
 
   getopts.getopt_long(os.args, &opts)
 
   for opt in opts.opts {
     if !opt.set do continue
     switch opt.name {
+      case "h":
+        show_help(opts)
+        os.exit(0)
       case "o":
         set_obfuscation_amount(opt)
       case "s":

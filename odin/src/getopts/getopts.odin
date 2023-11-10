@@ -18,11 +18,12 @@ optarg_val :: union {
 }
 
 Option :: struct {
-  name:     string,
-  alt_name: string,
-  has_arg:  optarg_opt,
-  val:      optarg_val,
-  set:      bool,
+  name:       string,
+  alt_name:   string,
+  has_arg:    optarg_opt,
+  val:        optarg_val,
+  set:        bool,
+  help_text:  string,
 }
 
 Options :: struct {
@@ -54,7 +55,7 @@ deinit_opts :: proc(o: ^Options) {
   delete(o.opts)
 }
 
-add_arg :: proc(o: ^Options, name: string, req: optarg_opt, alt_name: string = "") {
+add_arg :: proc(o: ^Options, name: string, req: optarg_opt, alt_name: string = "", help_text: string = "") {
   if o == nil || len(name) == 0 do os.exit(1)
   for opt in o.opts {
     if str.compare(name, opt.name) == 0 || str.compare(name, opt.alt_name) == 0 {
@@ -67,7 +68,7 @@ add_arg :: proc(o: ^Options, name: string, req: optarg_opt, alt_name: string = "
       os.exit(1)
     }
   }
-  append(&o.opts, Option{name, alt_name, req, false, false})
+  append(&o.opts, Option{name, alt_name, req, false, false, help_text})
 }
 
 getopt_long :: proc(args: []string, opts: ^Options) {
