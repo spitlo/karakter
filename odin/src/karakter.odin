@@ -39,13 +39,13 @@ set_obfuscation_amount :: proc(opt: getopts.Option) {
   if opt.set {
     obf_amount, ok := opt.val.(string)
     if !ok {
-      fmt.println("Could not parse obfuscation argument, exiting.")
+      fmt.eprintln("Could not parse obfuscation argument, exiting.")
       os.exit(1)
     }
     obfuscation_amount = obfuscation_amounts[obf_amount]
 
     if obfuscation_amounts[obf_amount] < 1 {
-      fmt.println("Could not parse obfuscation argument, exiting.")
+      fmt.eprintln("Could not parse obfuscation argument, exiting.")
       os.exit(1)
     }
   }
@@ -55,13 +55,13 @@ set_obfuscation_style :: proc(opt: getopts.Option) {
   if opt.set {
     obf_style, ok := opt.val.(string)
     if !ok {
-      fmt.println("Could not parse style argument, exiting.")
+      fmt.eprintln("Could not parse style argument, exiting.")
       os.exit(1)
     }
     obfuscation_style = obfuscation_styles[obf_style]
 
     if len(obfuscation_styles[obf_style]) == 0 {
-      fmt.println("Could not parse style argument, exiting.")
+      fmt.eprintln("Could not parse style argument, exiting.")
       os.exit(1)
     }
   }
@@ -112,9 +112,18 @@ main :: proc() {
   opts := getopts.init_opts()
   defer getopts.deinit_opts(&opts)
 
-  getopts.add_arg(&opts, "h", getopts.optarg_opt.NO_ARGUMENT, "help", "Shows help and exits")
-  getopts.add_arg(&opts, "o", getopts.optarg_opt.REQUIRED_ARGUMENT, "obfuscation", "Sets obfuscation level")
-  getopts.add_arg(&opts, "s", getopts.optarg_opt.REQUIRED_ARGUMENT, "style", "Sets obfuscation style")
+  getopts.add_arg(
+    &opts, "h", getopts.optarg_opt.NO_ARGUMENT, "help",
+    "Show help and exit",
+  )
+  getopts.add_arg(
+    &opts, "o", getopts.optarg_opt.REQUIRED_ARGUMENT, "obfuscation",
+    "Set obfuscation level. Arguments: lo|md|hi",
+  )
+  getopts.add_arg(
+    &opts, "s", getopts.optarg_opt.REQUIRED_ARGUMENT, "style",
+    "Set obfuscation style. Arguments: cp|ft|lm|mt|ns",
+  )
 
   // If no arguments are provided, show help and quit
   if len(os.args) == 1 {
@@ -135,7 +144,7 @@ main :: proc() {
       case "s":
         set_obfuscation_style(opt)
       case:
-        fmt.println("Failure")
+        fmt.eprintln("Failure")
     }
   }
 
