@@ -85,6 +85,7 @@ It w4s th3 b35t 0f 71m35, 17 wa5 7he w0rst 0f time5, 1t w45 the 4ge of w1sdom, 1
 
 ## Languages
 
+- [ ] [Acton](https://www.acton-lang.org/)
 - [ ] [Ada](https://www.adaic.org/)
 - [ ] [Awk/Gawk](https://www.gnu.org/software/gawk/manual/gawk.html)
 - [x] [Bash](https://www.gnu.org/software/bash/)
